@@ -1,0 +1,46 @@
+name: "tutoriales_R"
+title: "Tutoriales R"
+description: |
+  Tutoriales R
+output_dir: "docs"
+navbar:
+  logo:
+    image: assets/logo_webFCA.svg
+  search: true
+  left:
+    - text: "Contenidos"
+      icon: fa-book
+      menu:
+        - text: "¿Cómo instalar R y RStudio?"
+          href: como_instalar_R_Rstudio.html
+        - text: "¿Cómo se usa RStudio?"
+          href: primera_sesion.html
+        - text: "¿Cómo es el lenguaje R?"
+          href: R_basico.html
+        - text: "¿Cómo crear un proyecto en Rstudio?"
+          href: como_crear_proyecto_rstudio.html
+        - text: "¿Cómo instalar y cargar paquetes?"
+          href: como_instalar_y_cargar_paquetes.html
+        - text: "¿Cómo importar datos en R?"
+          href: como_importar_datos_en_R.html
+        - text: "¿Cómo manipular datos con `dplyr`?"
+          href: introduccion_a_dplyr.html
+        - text: "¿Cómo visualizar datos con `ggplot2`?"
+          href: introduccion_a_ggplot2.html
+  right:
+    - text: "Home"
+      icon: fa-home
+      href: index.html
+    - text: "About"
+      href: about.html
+output: 
+  distill::distill_article:
+#    css: 'assets/styles.css'
+    toc: true
+    toc_float: true
+    toc_depth: 2
+language:
+  label:
+    fig: 'Figura '
+    tab: 'Tabla '
+    toc: 'Contenidos'

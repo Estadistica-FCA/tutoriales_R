@@ -1,0 +1,95 @@
+---
+title: "Primera sesion en R y RStudio"
+---
+
+```{r, include = F}
+library(knitr)
+```
+
+El entorno de trabajo de **RStudio** se divide en cuatro paneles. La disposición y contenido de los 4 paneles se puede personalizar yendo a `View > Panes > Panes Layout...`.
+A continuación la descripción de los paneles por defecto. 
+
+```{r, echo = F, out.width = "90%", fig.cap = 'Interfase principal de **RStudio**',  out.extra=''}
+include_graphics("assets/RStudio_paneles.png", auto_pdf = T)
+```
+
+1. **Editor**. Es donde se editan los _scripts_ que son archivos de texto plano con los comandos para ejecutar en **R**. Este panel no aparece a menos que se cree un nuevo script o se abra uno previamente guardado. 
+     
+2. **Console** (consola). Es donde vive **R** propiamente dicho. Allí se ejecutan los comandos y se obtienen las salidas de **R**. 
+
+3. **Environmnet/History/Connections**. En la primera pestaña se visualizan los objetos (variables, funciones o datos cargados) que están disponibles en el entorno de **R**, i.e. en la memoria. En la segunda se puede ver el historial de comandos ingresados o enviados a la consola. La tercera pestaña visualiza las conexiones establecidas con diferentes base de datos.
+
+4. **Files/Plots/Packages/Help/Viewer**. Allí se puede manejar los archivos del directorio de trabajo, visualizar los gráficos generados en **R** con posibilidad de exportarlos en varios formatos, administrar los paquetes o complementos, buscar o explorar el manual de ayuda y previsualizar archivos HTML.
+
+
+## La consola
+
+La línea de comandos o **consola** es el modo interactivo mediante el cual podemos ejecutar comandos directamente en el intérprete de **R**. El símbolo o _prompt_ `>` indica que **R** está disponible esperando una orden. Si la orden no está completa el símbolo se transforma en `+`. Por ejemplo: si tipeamos `2 + 2` y luego `ENTER`:
+
+```{r}
+2 + 2
+```
+
+Obetenemos inmediatemente el resultado. Otro ejemplo: el promedio de los números `1`, `3` y `4`
+
+```{r}
+(1 + 3 + 4) / 3
+```
+
+## El script
+
+El **editor de scripts** (panel #1) es un editor de texto plano que está conectado con la consola (panel #2). Tiene algunas funcionalidades que facilitan la edición del código:
+
+- Resaltado sintaxis: mediante colores resalta las funciones, variables, comandos o palabras claves del lenguaje **R**
+- Sangrado automático: agrega espacios en blanco para mantener la sangría de los bloques de código.
+- Plegado de código: permite colapsar bloques de código
+- Completado automático y ayuda en linea: muestra sugerencias para completar el comando o argumentos usando la tecla `TAB`.
+
+Para crear un nuevo script se puede usar uno de los siguientes métodos:
+
+- Ir a al menu `File > New File > R Script`
+- Usar el atajo de teclado `CTRL + SHIFT + N`
+- Clickear en el primer ícono de la barra de menu
+
+```{r, echo = F, out.width = "75%", fig.cap = 'Barra de herramientas de **RStudio**',  out.extra=''}
+include_graphics("assets/menu_bar.png", auto_pdf = T)
+```
+
+Una vez abierto el script en blanco, se pueden empezar a escribir los comandos de **R**. Por ejemplo podemos escribir lo siguiente:
+
+```{r, eval = F}
+"Hola Mundo!" # Clásico mensaje "Hola mundo!"
+
+# Calcular el promedio de estos números
+(1 + 3 + 4) / 3
+```
+
+Estos comandos no se van a ejecutar automáticamente ya que solo los hemos escritor en el script. Para ejecutar estos comandos en la consola hay que posicionar le cursor en la linea deseada o bien seleccionar si queremos ejecutar varias a la vez y luego enviarlo a la consoloa con una de las siguientes opciones:
+
+- Ir al menu `Code > Run Selected Line(s)`
+- Usar el atajo de teclado `CTRL + ENTER` o `CTRL + R`
+- Usar el ícono `Run` de la barra de herramientas de la pestaña del script
+
+```{r, echo = F, out.width = "75%", fig.cap = 'Barra de herramientas del panel Editor',  out.extra=''}
+include_graphics("assets/menu_run.png", auto_pdf = T)
+```
+
+El simbolo `#` indica que lo que sigue es un **comentario** y por lo tanto **R** lo ignora cuando es enviado a la consola. Los comentarios pueden ir solos en una línea separada o bien dentro de una línea que tenga algún comando. Si bien no son necesarios para correr el código, los comentarios son muy útiles para estructurar el script y hacer anotaciones para que otros, o nosotros en un futuro, entiendan lo que hace esa parte del script.
+
+Para guardar el script:
+
+1. Ir al menu `File > Save` o usar el atajo de teclado `CTRL + S` o bien el ícono con el diskette de la barra de herramientas global o de la pestaña del script activo.
+
+2. Elegir la carpeta destino y el nombre de archivo. Automáticamente se agregará la extensión `.R` que corresponde a los scripts.
+
+## Ayuda!!!
+
+Por último, y no menos importante, **R** y **RStudio** cuentan con un completo sistema de ayuda. Desde la consola se puede acceder usando la función `?` seguida del nombre de la función o bien `help("nombre")`
+
+```{r}
+# Pedir ayuda de la función mean
+?mean
+help(mean)
+```
+
+Una de las ventajas de **RStudio** es que dispone de un panel (Panel #4) dedicado a visualizar las páginas de ayuda. Allí se puede navegar por las páginas utilizando los links, realizar búsquedas, etc. Leer la documentación nunca viene mal y generalmente ahorra dolores de cabeza.

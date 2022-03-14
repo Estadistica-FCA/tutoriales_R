@@ -1,0 +1,125 @@
+---
+title: "¿Cómo instalar y cargar paquetes en R?"
+---
+
+**R** es modular ya que consta de un núcleo básico de programas para realizar operaciones, gráficos y análisis. Estos programas vienen incluidos en el paquete de instalación. No obstante, existe un repositorio denominado CRAN (_Comprehensive R Archive Network_) donde constantemente se van agregando nuevos paquetes para expandir las funcionalidades de **R**.
+
+> **IMPORTANTE** Para poder acceder a estos paquetes extra, primero es necesario instalarlos en nuestro sistema y luego, cuando los necesitemos, cargarlo en la sesión de trabajo.
+
+Para esto tenemos 3 alternativoas:
+
+1. Funciones `install.packages()/library()`
+2. Paquete `pacman` (recomendada)
+3. Panel `Packages` de **RStudio**
+
+A continuación se muestra un ejemplo para instalar los paquetes `nortest` y `moments`
+
+## Alternativa 1: `install.packages()/library()`
+
+Si queremos instalar uno paquetes necesitamos correr por **única vez** la función `install.packages()` indicando el nombre del paquete entre comillas:
+
+```{r, eval = F}
+# Un solo paquete
+install.packages("moments")
+```
+
+Si queremos instalar varios paquetes a la vez podemos crear un vector que contenga los nombres de los paquetes y usarlo como argumento en la función. 
+
+```{r, eval = F}
+# Varios paquetes
+paquetes <- c("nortest", "moments")
+install.packages(paquetes)
+```
+
+Una vez instalados, los paquetes se deben _cargar_ en el entorno o sesión de trabajo usando la función `library()`.
+
+```{r, eval = F}
+# Cargar el paquerte agricolae
+library(moments)
+```
+
+A diferencia de `install.packages()`, la carga de los paquetes es individual, es decir, debejos ejecutar `library()` por cada paquete que querramos cargar.
+
+Alternativamente si queremos usar alguna función específica sin cargar el paquete entero podemos usar `::`. Por ejemplo, lara usar la función `skewness()` del paquete `moments` podemos hacer
+
+```{r, eval = F}
+moments::skewness(x)
+```
+
+Si por alguna circunstancia queremos removerlo del entorno de trabajo (no del sistemaa), es necesario usar la función `detach()`
+
+```{r, eval = F}
+# Para remover el paquete moments
+detach("package:moments", unload = T)
+```
+
+Finalmente si queremos desinstalarlo de nuestra máquina, es necesario usar la función `remove.packages()`
+
+```{r, eval = F}
+# Para remover el paquete moments
+remove.packages("moments")
+```
+
+
+## Alternativa 2: `pacman`
+
+El proceso anterior se puede simplificar usando el paquete `pacman`. Pero primero hay que instalarlo **por única vez** usando `install.packages()`:
+
+```{r, eval = F}
+install.packages("pacman")
+```
+
+Luego, cuando queremos usar un paquete o varios paquetes podemos llamarlos usando `p_load()`:
+
+```{r, eval = F}
+pacman::p_load(moments, nortest)  # no necesitamos usar comillas
+```
+
+Esta función por defecto va a chequear si el o los paquetes indicados están instalados antes de cargarlos. Si algun paquete no está instalado, lo instala y después lo carga.  Eso se controla con el argumento `install = FALSE`. 
+
+Para chequear si un paquete esta cargado:
+
+```{r, eval = F}
+pacman::p_isloaded(x)
+```
+
+Para remover un paquete de la sesion
+
+```{r, eval = F}
+pacman::p_unload(x)
+```
+
+
+Para remover algun paquete de nuestra biblioteca
+
+```{r, eval = F}
+pacman::p_delete(x)
+```
+
+Para buscar un paquete por el nombre, o alguna parte de él
+
+```{r, eval = F}
+pacman::p_search_library("tidy")
+```
+
+## Alternativa 3: Panel Packages de RStudio
+
+**RStudio** cuenta con un panel desde donde podemos instalar y cargar paquetes. En ambos casos **RStudio** corre las funciones `install.packages()` y `library()`.
+
+```{r, echo = F, out.width = "75%", fig.align = 'center', fig.cap = 'Panel `Packages`', fig.pos= 'h', out.extra=''}
+knitr::include_graphics("assets/packages1.png", auto_pdf = T)
+```
+
+Para instalar por primera vez los paquetes se puede utilizar el ícono _Install_ que abre el siguiente cuadro de diálogo.
+
+```{r, echo = F, out.width = "75%", fig.align = 'center', fig.cap = 'Cuadro de diálogo para instalar paquetes', fig.pos= 'h', out.extra=''}
+knitr::include_graphics("assets/packages2.png", auto_pdf = T)
+```
+
+Por defecto, **RStudio** buscará e instalará los paquetes desde _CRAN_. En `Packages` hay que ingresar los nombres de los paquetes separados por comas. **RStudio** ofrece la posibilidad de ir completando el nombre si no nos acordamos.
+
+Finalmente, para cargar los paquetes podemos usar el panel **Packages**, buscar el paquete que queremos y tildar la casilla.
+
+## ¿`library()`, `pacman` o panel `Packages`?
+
+Si bien el panel `Packages` brinda una interfase para seleccionar y cargar los paquetes con un click, esta alternativa tiene una desventaja: **hay que acordarse en futuras sesiones que es necesario cargar ese paquete**. Es por eso que incluir un par de líneas en el script con la función `library()` o `pacman::p_load()`es mejor. `pacman` tiene la ventaja extra de chequear si el paquete está instalado o no.

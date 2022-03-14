@@ -1,0 +1,66 @@
+---
+title: "¿Cómo instalar R y RStudio?"
+---
+
+```{r, include = F}
+library(knitr)
+```
+
+
+**R** y **RStudio** se instalan por separado. **R** puede funcionar sin **RStudio**, en cambio **RStudio** necesita que al menos una versión de **R** esté instalada en el sistema. Ambos softwares son multiplataforma y pueden ser ejecutados en sistemas operativos Windows, Mac OS X  y Linux. 
+
+En las páginas [https://cloud.r-project.org/](https://cloud.r-project.org/) y [https://www.rstudio.com/products/rstudio/download/](https://www.rstudio.com/products/rstudio/download/) hay instrucciones específicas para cada plataforma. 
+
+```{r, echo = F, fig.cap = 'Página de descaga de **R**', out.width = '75%', out.extra=''} 
+#webshot::webshot('https://cloud.r-project.org/', file = 'assets/CRAN_choose_OS.png')
+include_graphics('assets/CRAN_choose_OS.png', auto_pdf = T)
+```
+
+```{r, echo = F, fig.cap = 'Página de descarga de **RStudio**', out.width = '75%', out.extra=''} 
+# webshot::webshot(
+#    url = 'https://www.rstudio.com/products/rstudio/download/',
+#    file = "./assets/rstudio_download.png",
+#    selector = c("div.page-header.page-header-mini", "div.section")
+# )
+include_graphics('assets/rstudio_download.png', auto_pdf = T)
+```
+
+A continuación se describe el procedimiento para instalar **R** y **RStudio** bajo Windows.
+
+## Instalación de **R**
+
+1) Descargar el archivo instalador correspondiente a la última versión estable de **R** desde el CRAN[^1] (del inglés, _Comprenhensive R Archive Network_) visitando el siguiente [link](https://cloud.r-project.org/bin/windows/base/release.htm). 
+
+
+[^1]: CRAN es un conjunto de servidores espejo distribuidos alrededor del mundo que tienen copias de **R** y sus paquetes. No es necesario escojer el espejo más cercano ya que el espejo nube (https://cloud.r-project.org) automáticamente determina de que servidor conviene realizar la descarga.
+
+2) Ejecutar el archivo descargado [^2] y seguir el asistente de instalación con todas las opciones por defecto. 
+
+[^2]: Al momento de escribir estas instrucciones la última versión estable de **R** era la 4.1.1 "Kick Things", por lo tanto el link apuntará al archivo `R-4.1.3-win.exe`. 
+
+3) Si la instalación ha sido exitosa en el menú _Inicio_ podrá encontrarse la carpeta _R_ que contendrá dos accesos directos a la interfase de usuario mínima que viene con la versión de **R** para Windows.
+
+```{r, echo = F, fig.cap = 'R GUI para Windows', out.width = '75%', out.extra=''} 
+include_graphics('assets/rgui.png', auto_pdf = T)
+```
+
+## Instalación de **RStudio**
+
+1) Descargar el archivo de instalación correspondiente a nuestra plataforma o sistema operativo. Al momento de escribir estas instrucciones la última versión estable de **RStudio** era `RStudio-2022.02.0-443.exe` que se encuentra en este [link](https://download1.rstudio.org/desktop/windows/RStudio-2022.02.0-443.exe)
+
+   En el caso que haya una nueva versión, ir al sitio web de descarga de **RStudio** [https://www.rstudio.com/products/rstudio/download/](https://www.rstudio.com/products/rstudio/download/)
+
+```{r, echo = F, out.width = "75%", fig.cap = 'Página de descarga de **RStudio**',  out.extra=''}
+# webshot::webshot(
+#    url = 'https://www.rstudio.com/products/rstudio/download/',
+#    file = "./assets/rstudio_download_OS.png",
+#    selector = "div.section.pt-4"
+# )
+knitr::include_graphics("assets/rstudio_download_OS.png", auto_pdf = T)
+```
+
+2) Ejecutar el archivo `.exe` y seguir el asistente de instalación con todas las opciones por defecto.
+
+3) Si la instalación ha sido exitosa en el menú _Inicio_ dentro de la carpeta _RStudio_  se encontrará el acceso directo a **RStudio** el cual, mediante el menu contextual (botón derecho del ratón) puede enviarse al Escritorio como acceso directo o bien anclar al menu de Inicio o barra de acceso rápido.
+   
+Ahora sí, ya tenemos listo **R** y **RStudio** para empezar a trabajar!!

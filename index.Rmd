@@ -1,0 +1,42 @@
+---
+title: "Tutoriales de R"
+site: distill::distill_website
+---
+
+```{r, echo = F, message=F}
+library(knitr)
+opts_chunk$set(fig.align = "center")
+# save the built-in output hook
+hook_output <- knit_hooks$get("output")
+# set a new output hook to truncate text output
+knit_hooks$set(output = function(x, options) {
+  if (!is.null(n <- options$out.lines)) {
+    x <- xfun::split_lines(x)
+    if (length(x) > n) {
+      # truncate the output
+      x <- c(head(x, n), "....\n")
+    }
+    x <- paste(x, collapse = "\n")
+  }
+  hook_output(x, options)
+})
+```
+
+
+
+**R** es un lenguaje y entorno para el procesamiento, visualización y análisis estadístico de datos. Fue creado en 1993 por R. Gentleman y R. Ihaka, ambos científicos del Departamento de Estadística de la Universidad de Auckland (Nueva Zelanda). Actualmente su desarrollo y mantenimiento está a cargo del _R Core Team_. El sitio oficial del proyecto es [www.r-project.org](www.r-project.org)
+
+```{r, echo = F, fig.cap = 'Página oficial de R Project', out.width = '75%' , out.extra=''} 
+#webshot::webshot('http://www.r-project.org', file = "./assets/rproject.png")
+include_graphics('assets/rproject.png', auto_pdf = T)
+```
+
+Hoy en día, **R** es la _lingua franca_ del procesamiento y análisis de datos, tanto en el ámbito académico como comercial dado que es gratiuto, multiplataforma, de código abierto (_open source_, liberado con licencia GNU/GPL). Esto y el ecosistema de paquetes contribuidos por la comunidad de usuarios lo convierte en un software muy potente ya que expresa el estado del arte de los métodos estadísticos. 
+
+La flexibilidad y potencia de **R** se basa en su interfaz de comandos (CLI, del inglés _command line interface_ ) que permite la ejecución de comandos de manera interactiva (en consola) o estructurada mediante scripts. 
+
+```{r, echo = F, fig.cap = 'Ejemplo de consola o terminal de Linux y Windows corriendo la última versión estable de **R**', out.width = '75%', out.extra=''} 
+include_graphics('assets/consola_linux.png', auto_pdf = T)
+```
+
+Esta característica impone una [curva de aprendizaje](https://es.wikipedia.org/wiki/Curva_de_aprendizaje) lenta. Con el objetivo de acelerar el aprendizaje se ha diseñado este sitio web con orientado a estudiantes de Estadísica 1 y 2 de la carrera de Ingenieria Agronómica de la Facultad de Ciencias Agrarias (Universidad Nacional del Litoral).
