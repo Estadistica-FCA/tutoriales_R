@@ -2,6 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
-**/*_files
+#**/*_files
 **/*_cache
 ../*.html
