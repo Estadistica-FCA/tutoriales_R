@@ -2034,7 +2034,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2112,16 +2112,35 @@ Contenidos
 <h3>Contents</h3>
 <ul>
 <li><a href="#qué-es-dplyr">¿Qué es <code>dplyr</code>?</a></li>
-<li><a href="#cómo-conseguir-dplyr">¿Cómo conseguir <code>dplyr</code>?</a></li>
-<li><a href="#verbos-importantes-de-dplyr-para-recordar">Verbos importantes de <code>dplyr</code> para recordar</a></li>
+<li><a href="#cómo-conseguir-dplyr">¿Cómo conseguir
+<code>dplyr</code>?</a></li>
+<li><a href="#verbos-importantes-de-dplyr-para-recordar">Verbos
+importantes de <code>dplyr</code> para recordar</a></li>
 <li><a href="#dplyr-en-acción"><code>dplyr</code> en acción</a></li>
 </ul>
 </nav>
 </div>
 <h2 id="qué-es-dplyr">¿Qué es <code>dplyr</code>?</h2>
-<p><code>dplyr</code> es un paquete de <strong>R</strong> muy potente para la exploración, transformación y resumen de datos en formato de tabla con filas (observaciones) y columnas (variables). Es un componente de un conjunto de packages llamado <code>tidyverse</code> desarrollados por <a href="http://hadley.nz/">Hadley Wickham</a></p>
-<p>El paquete contiene un conjunto de funciones (o <em>verbos</em>) que realizan operaciones comunes para el manejo de datos tales como: filtrar filas, seleccionar columnas, re-ordenar filas, agregar o transformar columnas, resumir datos. También permite agrupar los datos facilitando la estrategia <em>split-apply-combine</em>, es decir, dividir (<em>split</em>) los datos según una variable de grupo, aplicar (<em>apply</em>) alguna transformación o resumen y combinar (<em>combine</em>) las partes para presentar los resultados.</p>
-<p>Si bien <strong>R</strong> base tiene funciones que realizan las mismas tareas (<code>split()</code>, <code>subset()</code>, <code>apply()</code>, <code>sapply()</code>, <code>lapply()</code>, <code>tapply()</code> and <code>aggregate()</code>), el paquete <code>dplyr</code> brinda una interface más consistente que permite trabajar de manera más facil con <code>data.frame</code> (tabla de datos) más que con vectores.</p>
+<p><code>dplyr</code> es un paquete de <strong>R</strong> muy potente
+para la exploración, transformación y resumen de datos en formato de
+tabla con filas (observaciones) y columnas (variables). Es un componente
+de un conjunto de packages llamado <code>tidyverse</code> desarrollados
+por <a href="http://hadley.nz/">Hadley Wickham</a></p>
+<p>El paquete contiene un conjunto de funciones (o <em>verbos</em>) que
+realizan operaciones comunes para el manejo de datos tales como: filtrar
+filas, seleccionar columnas, re-ordenar filas, agregar o transformar
+columnas, resumir datos. También permite agrupar los datos facilitando
+la estrategia <em>split-apply-combine</em>, es decir, dividir
+(<em>split</em>) los datos según una variable de grupo, aplicar
+(<em>apply</em>) alguna transformación o resumen y combinar
+(<em>combine</em>) las partes para presentar los resultados.</p>
+<p>Si bien <strong>R</strong> base tiene funciones que realizan las
+mismas tareas (<code>split()</code>, <code>subset()</code>,
+<code>apply()</code>, <code>sapply()</code>, <code>lapply()</code>,
+<code>tapply()</code> and <code>aggregate()</code>), el paquete
+<code>dplyr</code> brinda una interface más consistente que permite
+trabajar de manera más facil con <code>data.frame</code> (tabla de
+datos) más que con vectores.</p>
 <h2 id="cómo-conseguir-dplyr">¿Cómo conseguir <code>dplyr</code>?</h2>
 <p>Para instalar por primera vez en la computadora:</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -2134,7 +2153,9 @@ Contenidos
 </code></pre>
 </div>
 </div>
-<p>Lo anterior se debe realizar por única vez si el paquete no está previamente instalado en la máquina. Para usar las funciones en una sesion de trabajo hay que cargarlo con <code>library()</code>:</p>
+<p>Lo anterior se debe realizar por única vez si el paquete no está
+previamente instalado en la máquina. Para usar las funciones en una
+sesion de trabajo hay que cargarlo con <code>library()</code>:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Solo</span>
@@ -2145,9 +2166,14 @@ Contenidos
 </code></pre>
 </div>
 </div>
-<p><strong>R</strong> va a avisarnos en la consola que esta enmascarando (reemplazando) algunas funciones que ya estaban en el entorno, o bien el paquete nos devuelve algun mensaje. A menos que diga <code>Error ...</code>, eso está bien.</p>
-<h2 id="verbos-importantes-de-dplyr-para-recordar">Verbos importantes de <code>dplyr</code> para recordar</h2>
-<p>Toda la estrategia de trabajo con datos de <code>dplyr</code> se basa en 6 verbos:</p>
+<p><strong>R</strong> va a avisarnos en la consola que esta enmascarando
+(reemplazando) algunas funciones que ya estaban en el entorno, o bien el
+paquete nos devuelve algun mensaje. A menos que diga
+<code>Error ...</code>, eso está bien.</p>
+<h2 id="verbos-importantes-de-dplyr-para-recordar">Verbos importantes de
+<code>dplyr</code> para recordar</h2>
+<p>Toda la estrategia de trabajo con datos de <code>dplyr</code> se basa
+en 6 verbos:</p>
 <table>
 <thead>
 <tr class="header">
@@ -2162,7 +2188,8 @@ Contenidos
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>filter()</code></td>
-<td style="text-align: left;">filtra o selecciona las filas (observaciones)</td>
+<td style="text-align: left;">filtra o selecciona las filas
+(observaciones)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>arrange()</code></td>
@@ -2170,7 +2197,8 @@ Contenidos
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>mutate()</code></td>
-<td style="text-align: left;">crea nuevas columnas o modifica las preexistentes</td>
+<td style="text-align: left;">crea nuevas columnas o modifica las
+preexistentes</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>summarise()</code></td>
@@ -2178,19 +2206,28 @@ Contenidos
 </tr>
 <tr class="even">
 <td style="text-align: left;"><code>group_by()</code></td>
-<td style="text-align: left;">permite aplicar los verbos anteriores en subgrupos (<em>split-apply-combine</em>)</td>
+<td style="text-align: left;">permite aplicar los verbos anteriores en
+subgrupos (<em>split-apply-combine</em>)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><code>sample_n()</code></td>
-<td style="text-align: left;">para tomar muestras aleatorias con o sin reposición</td>
+<td style="text-align: left;">para tomar muestras aleatorias con o sin
+reposición</td>
 </tr>
 </tbody>
 </table>
 <p>En la mayoría de los casos la sintaxis es:</p>
 <p><code>function(que_datos, que_hacer_con_los_datos)</code></p>
-<p>En <code>que_datos</code> hay que poner el nombre del set de datos o <code>data.frame</code> (a menos que se use el operador <code>%&gt;%</code> para encadenar, mas adelante) y en <code>que_hacer_con_los_datos</code> indicar que operación, condicion, transformacion, etc aplicar a las filas y columnas.</p>
+<p>En <code>que_datos</code> hay que poner el nombre del set de datos o
+<code>data.frame</code> (a menos que se use el operador
+<code>%&gt;%</code> para encadenar, mas adelante) y en
+<code>que_hacer_con_los_datos</code> indicar que operación, condicion,
+transformacion, etc aplicar a las filas y columnas.</p>
 <h2 id="dplyr-en-acción"><code>dplyr</code> en acción</h2>
-<p>Para ilustrar el uso del paquete vamos a usar los datos contenidos en el archivo <a href="https://github.com/Estadistica-FCA/tutoriales_R/raw/master/data/pesada_terneros.xlsx"><code>pesada_terneros.xlsx</code></a>. Para más detalles ir a la hoja de descripción de datos.</p>
+<p>Para ilustrar el uso del paquete vamos a usar los datos contenidos en
+el archivo <a
+href="https://github.com/Estadistica-FCA/tutoriales_R/raw/master/data/pesada_terneros.xlsx"><code>pesada_terneros.xlsx</code></a>.
+Para más detalles ir a la hoja de descripción de datos.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Cargar los datos con readxl</span>
@@ -2200,8 +2237,11 @@ Contenidos
 </div>
 </div>
 <h3 id="seleccionando-variables">Seleccionando variables</h3>
-<p>Una tareas básicas cuando se exploran datos es la selección de columnas de interés (variables). Esto se lleva a cabo con <code>select()</code>.</p>
-<p>Para seleccionar las columnas <code>Procedencia</code>, <code>IDV</code> y <code>Peso</code>:</p>
+<p>Una tareas básicas cuando se exploran datos es la selección de
+columnas de interés (variables). Esto se lleva a cabo con
+<code>select()</code>.</p>
+<p>Para seleccionar las columnas <code>Procedencia</code>,
+<code>IDV</code> y <code>Peso</code>:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Sin asignar</span>
@@ -2228,8 +2268,13 @@ Contenidos
 </code></pre>
 </div>
 </div>
-<p>Por defecto, si no se asigna a un nuevo objeto, el resultado de la operación se imprime en la consola con la función <code>print()</code> la cual por defecto muestra las 10 primeras observaciones y la cantidad de columnas que entran en la pantalla. Aquellas columnas que no entran son indicadas al pie.</p>
-<p>Si quiero ver más registros se puede usar el argumento <code>n =</code> de <code>print()</code></p>
+<p>Por defecto, si no se asigna a un nuevo objeto, el resultado de la
+operación se imprime en la consola con la función <code>print()</code>
+la cual por defecto muestra las 10 primeras observaciones y la cantidad
+de columnas que entran en la pantalla. Aquellas columnas que no entran
+son indicadas al pie.</p>
+<p>Si quiero ver más registros se puede usar el argumento
+<code>n =</code> de <code>print()</code></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>mis_columnas</span>, n <span class='op'>=</span> <span class='fl'>15</span><span class='op'>)</span>
@@ -2255,8 +2300,10 @@ Contenidos
 15 La Rosita   IY735C      242
 # … with 1,583 more rows</code></pre>
 </div>
-<p>Con <code>n = "all"</code> se imprimen todas (no se muestra por razones obvias)</p>
-<p>El orden en que aparecen las variables en el resultado es el orden que se utilizó al seleccionarlas.</p>
+<p>Con <code>n = "all"</code> se imprimen todas (no se muestra por
+razones obvias)</p>
+<p>El orden en que aparecen las variables en el resultado es el orden
+que se utilizó al seleccionarlas.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># El orden altera el producto</span>
@@ -2278,7 +2325,11 @@ Contenidos
 10 La Rosita   QW110A058   172
 # … with 1,588 more rows</code></pre>
 </div>
-<p>También se puede usar los comnados <code>starts_with()</code>, <code>ends_with()</code>, <code>contains()</code>, etc (ver <code>?select_helpers)</code> para más opciones). Para elegir varias columnas que tienen un patron sin tener que tipear todos los nombres.</p>
+<p>También se puede usar los comnados <code>starts_with()</code>,
+<code>ends_with()</code>, <code>contains()</code>, etc (ver
+<code>?select_helpers)</code> para más opciones). Para elegir varias
+columnas que tienen un patron sin tener que tipear todos los
+nombres.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Selecciona columnas que empiezan con P</span>
@@ -2300,7 +2351,8 @@ Contenidos
 10 La Rosita     172
 # … with 1,588 more rows</code></pre>
 </div>
-<p>Para omitir algunas columnas en la seleccion se puede usar el <code>-</code> antes del nombre.</p>
+<p>Para omitir algunas columnas en la seleccion se puede usar el
+<code>-</code> antes del nombre.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Selecciona columnas que empiezan con P</span>
@@ -2323,7 +2375,12 @@ Contenidos
 # … with 1,588 more rows, and 1 more variable: Hora &lt;dttm&gt;</code></pre>
 </div>
 <h3 id="seleccionando-observaciones">Seleccionando observaciones</h3>
-<p>Otra tarea muy frecuente es seleccionar casos o observaciones que cumplan con alguna condición. Esto se lleva a cabo con <code>filter()</code>. Se pueden usar los operadores <em>booleanos</em> <code>==</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>!=</code>, <code>%in%</code>) para crear pruebas o condiciones lógicas.</p>
+<p>Otra tarea muy frecuente es seleccionar casos o observaciones que
+cumplan con alguna condición. Esto se lleva a cabo con
+<code>filter()</code>. Se pueden usar los operadores <em>booleanos</em>
+<code>==</code>, <code>&gt;</code>, <code>&lt;</code>,
+<code>&gt;=</code>, <code>&lt;=</code>, <code>!=</code>,
+<code>%in%</code>) para crear pruebas o condiciones lógicas.</p>
 <p>Para seleccionar los terneros de <code>Los Corralitos</code>:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2352,7 +2409,9 @@ Contenidos
 </code></pre>
 </div>
 </div>
-<p>La seleccion se puede hacer por más de una condicion. Por ejemplo, seleccionar los de <code>Los Corralitos</code> que pesen más de 200 kg:</p>
+<p>La seleccion se puede hacer por más de una condicion. Por ejemplo,
+seleccionar los de <code>Los Corralitos</code> que pesen más de 200
+kg:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>terneros</span>, <span class='va'>Procedencia</span> <span class='op'>==</span> <span class='st'>'Los Corralitos'</span>, <span class='va'>Peso</span> <span class='op'>&gt;</span> <span class='fl'>200</span><span class='op'>)</span>
@@ -2374,7 +2433,12 @@ Contenidos
 # … with 250 more rows, and 3 more variables: Fecha &lt;dttm&gt;,
 #   Hora &lt;dttm&gt;, Peso &lt;dbl&gt;</code></pre>
 </div>
-<p><code>filter()</code> asume que cada condicion se debe cumplir en simultaneo para que la observación sea seleccionada. Esto equivale a utilizar el operador <code>&amp;</code> (<em>Y</em>). En caso de querer seleccionar aquellos registros que cumple una u otra condicion se usa el operador <code>|</code> (<em>O</em>). Poniendo <code>!</code> delante de la condicion se invierte la selección.</p>
+<p><code>filter()</code> asume que cada condicion se debe cumplir en
+simultaneo para que la observación sea seleccionada. Esto equivale a
+utilizar el operador <code>&amp;</code> (<em>Y</em>). En caso de querer
+seleccionar aquellos registros que cumple una u otra condicion se usa el
+operador <code>|</code> (<em>O</em>). Poniendo <code>!</code> delante de
+la condicion se invierte la selección.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Operador &amp;</span>
@@ -2417,7 +2481,10 @@ Contenidos
 # … with 769 more rows, and 3 more variables: Fecha &lt;dttm&gt;,
 #   Hora &lt;dttm&gt;, Peso &lt;dbl&gt;</code></pre>
 </div>
-<p>Con el operador <code>%in%</code> se puede especificar un rango de valores que deben cumplir. Por ejemplo terneros de <code>Los Corralitos</code>, <code>Las Glicinas</code> y <code>Don Alberto</code></p>
+<p>Con el operador <code>%in%</code> se puede especificar un rango de
+valores que deben cumplir. Por ejemplo terneros de
+<code>Los Corralitos</code>, <code>Las Glicinas</code> y
+<code>Don Alberto</code></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Indicando cada nombre</span>
@@ -2449,9 +2516,16 @@ Contenidos
 # … with 1,128 more rows, and 3 more variables: Fecha &lt;dttm&gt;,
 #   Hora &lt;dttm&gt;, Peso &lt;dbl&gt;</code></pre>
 </div>
-<h3 id="encadenando-operaciones-operador">Encadenando operaciones (operador <code>%&gt;%</code>)</h3>
-<p><code>dplyr</code> importa el operador <code>%&gt;%</code> de otro paquete llamado <code>magrittr</code>. Este operador permite encadenar operaciones realizadas con los verbos. De este modo no hay que ir creando tablas intermedias o anidar funciones. El operador traduce como <code>luego</code> y se le de izquierda a derecha y se puede.</p>
-<p>Ejemplo: Reportar los IDV y peso de los terneros con más de 250 kg. Esto implicaría seleccionar las columnas de interés y luego filtrar la tabla o vice versa.</p>
+<h3 id="encadenando-operaciones-operador">Encadenando operaciones
+(operador <code>%&gt;%</code>)</h3>
+<p><code>dplyr</code> importa el operador <code>%&gt;%</code> de otro
+paquete llamado <code>magrittr</code>. Este operador permite encadenar
+operaciones realizadas con los verbos. De este modo no hay que ir
+creando tablas intermedias o anidar funciones. El operador traduce como
+<code>luego</code> y se le de izquierda a derecha y se puede.</p>
+<p>Ejemplo: Reportar los IDV y peso de los terneros con más de 250 kg.
+Esto implicaría seleccionar las columnas de interés y luego filtrar la
+tabla o vice versa.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Creando tablas intermedias</span>
@@ -2533,11 +2607,18 @@ Contenidos
 10 PO150A686   262
 # … with 65 more rows</code></pre>
 </div>
-<p>Con <code>%&gt;%</code> se puede omitir el nombre de la tabla sobre la que se está trabajando (bonus: menos tipeo).</p>
-<p>La última opción se lee: _tomar la tabla <code>terneros</code>, <strong>luego</strong> seleccionar las columnas <code>IDV</code> y <code>Peso</code>, <strong>luego</strong> filtrar los terneros con pesos mayores a 250 kg.</p>
-<p>El operador de encadenamiento es muy útil cuando se encadenan muchas operaciones.</p>
+<p>Con <code>%&gt;%</code> se puede omitir el nombre de la tabla sobre
+la que se está trabajando (bonus: menos tipeo).</p>
+<p>La última opción se lee: _tomar la tabla <code>terneros</code>,
+<strong>luego</strong> seleccionar las columnas <code>IDV</code> y
+<code>Peso</code>, <strong>luego</strong> filtrar los terneros con pesos
+mayores a 250 kg.</p>
+<p>El operador de encadenamiento es muy útil cuando se encadenan muchas
+operaciones.</p>
 <h3 id="ordenar-las-filas">Ordenar las filas</h3>
-<p>Para ordenar según algun criterio aplicado a las columnas se usa <code>arrange()</code>. Por ejemplo, continuar con lo anterior pero mostrar ordenadospor peso.</p>
+<p>Para ordenar según algun criterio aplicado a las columnas se usa
+<code>arrange()</code>. Por ejemplo, continuar con lo anterior pero
+mostrar ordenadospor peso.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Ordenar de menor a mayor</span>
@@ -2588,7 +2669,11 @@ Contenidos
 # … with 65 more rows</code></pre>
 </div>
 <h3 id="crear-o-transformar-columnas">Crear o transformar columnas</h3>
-<p>Para crear nuevas columnas aplicando funciones a otras, o bien para transformar columnas se usa <code>mutate()</code>. Se pueden modificar más de una columna a la vez. Por ejemplo, suponiendo que interesa obtener el logaritmo natura de los pesos o elevar los pesos al cuadrado.</p>
+<p>Para crear nuevas columnas aplicando funciones a otras, o bien para
+transformar columnas se usa <code>mutate()</code>. Se pueden modificar
+más de una columna a la vez. Por ejemplo, suponiendo que interesa
+obtener el logaritmo natura de los pesos o elevar los pesos al
+cuadrado.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>terneros</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
@@ -2611,7 +2696,9 @@ Contenidos
 10   172     5.15 29584
 # … with 1,588 more rows</code></pre>
 </div>
-<p>Esto no cambia el set de datos <code>terneros</code> ya que no se lo asignó a ningun objeto. Para sobreescribir o actualiza el set de datos <code>terneros</code> hay que asignarlo al mismo objeto.</p>
+<p>Esto no cambia el set de datos <code>terneros</code> ya que no se lo
+asignó a ningun objeto. Para sobreescribir o actualiza el set de datos
+<code>terneros</code> hay que asignarlo al mismo objeto.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>terneros</span> <span class='op'>&lt;-</span> <span class='va'>terneros</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
@@ -2619,8 +2706,11 @@ Contenidos
 </code></pre>
 </div>
 </div>
-<p>Aclaración: Si se hubiese usado <code>select()</code> el set de datos terneros solamente contendría las columnas seleccionadas.</p>
-<p>Otro ejemplo más útil: calcular los z-scores de los peso (para ello se requiere calcular el promedio y desvio) y crear una columna que indique si es un outlier y luego reportar los que son outliers.</p>
+<p>Aclaración: Si se hubiese usado <code>select()</code> el set de datos
+terneros solamente contendría las columnas seleccionadas.</p>
+<p>Otro ejemplo más útil: calcular los z-scores de los peso (para ello
+se requiere calcular el promedio y desvio) y crear una columna que
+indique si es un outlier y luego reportar los que son outliers.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>terneros</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
@@ -2636,7 +2726,11 @@ Contenidos
 2 IA671B041</code></pre>
 </div>
 <h3 id="resmuir-datos">Resmuir datos</h3>
-<p>Mediante <code>summarise()</code> se pueden aplicar funciones para resumir en un solo valor los valores de las columnas. Las funciones a aplicar deben devolver un único valor, por ejemplo <code>mean()</code>. Si usamos <code>summary()</code> esto devolverá 6 valores y dará error.</p>
+<p>Mediante <code>summarise()</code> se pueden aplicar funciones para
+resumir en un solo valor los valores de las columnas. Las funciones a
+aplicar deben devolver un único valor, por ejemplo <code>mean()</code>.
+Si usamos <code>summary()</code> esto devolverá 6 valores y dará
+error.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>terneros</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
@@ -2648,7 +2742,8 @@ Contenidos
   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt;        &lt;int&gt;
 1  183.  37.0  1598 291802            7</code></pre>
 </div>
-<p>Nuevamente estos resultados pueden asignarse a otro objeto o bien encadenarse con otras operaciones.</p>
+<p>Nuevamente estos resultados pueden asignarse a otro objeto o bien
+encadenarse con otras operaciones.</p>
 <p>Otro ejemplo, obtener la cantidad de terneros de cada procedencia</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2667,7 +2762,8 @@ Contenidos
 6 Las Glicinas     494
 7 Los Corralitos   575</code></pre>
 </div>
-<p>Otro ejemplo más, cantidad de terneros de cada procedencia separados en mayor o menor a 200 kg</p>
+<p>Otro ejemplo más, cantidad de terneros de cada procedencia separados
+en mayor o menor a 200 kg</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>terneros</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
@@ -2692,8 +2788,13 @@ Contenidos
 13 Los Corralitos FALSE          315
 14 Los Corralitos TRUE           260</code></pre>
 </div>
-<h3 id="agrupar-último-pero-no-menos-importante">Agrupar (último pero no menos importante)</h3>
-<p>El verbo <code>group_by()</code> es muy útil para aplicar operaciones en subgrupos y presentar todo junto (<em>split-apply-combine</em>). Lo que hace es indicar que en el <code>data.frame</code> hay una o más variables que conforman los grupos. Luego cada operación se aplica a esos subgrupos.</p>
+<h3 id="agrupar-último-pero-no-menos-importante">Agrupar (último pero no
+menos importante)</h3>
+<p>El verbo <code>group_by()</code> es muy útil para aplicar operaciones
+en subgrupos y presentar todo junto (<em>split-apply-combine</em>). Lo
+que hace es indicar que en el <code>data.frame</code> hay una o más
+variables que conforman los grupos. Luego cada operación se aplica a
+esos subgrupos.</p>
 <p>Ejemplo: calcular media, desvio, n y suma para cada procedencia.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2714,7 +2815,9 @@ Contenidos
 7 Los Corralitos  197.  35.2   575 113376</code></pre>
 </div>
 <h3 id="muestrear">Muestrear</h3>
-<p>El verbo <code>sample_n()</code> and <code>sample_frac()</code> son útiles para tomar muestras aleatorias (con o sin reposición) de un conjunto de observaciones. También se puede hacer por subgrupo!</p>
+<p>El verbo <code>sample_n()</code> and <code>sample_frac()</code> son
+útiles para tomar muestras aleatorias (con o sin reposición) de un
+conjunto de observaciones. También se puede hacer por subgrupo!</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Una muestra de 50 novillos</span>
@@ -2726,16 +2829,16 @@ Contenidos
 <pre><code># A tibble: 50 × 10
    IDV       Procedencia    Sexo  `Fecha Ingreso`     Categoria
    &lt;chr&gt;     &lt;chr&gt;          &lt;chr&gt; &lt;dttm&gt;              &lt;chr&gt;    
- 1 PO150A764 Los Corralitos Macho 2017-07-20 00:00:00 Ternero  
- 2 SZ208H756 Las Glicinas   Macho 2017-07-20 00:00:00 Ternero  
- 3 NO133A053 Las Glicinas   Macho 2017-07-23 00:00:00 Ternero  
- 4 PO150A463 Los Corralitos Macho 2017-07-22 00:00:00 Ternero  
- 5 SZ208H744 Las Glicinas   Macho 2017-07-21 00:00:00 Ternero  
- 6 NS509H021 Los Corralitos Macho 2017-07-22 00:00:00 Ternero  
- 7 SZ208H735 Las Glicinas   Macho 2017-07-21 00:00:00 Ternero  
- 8 GT542A662 Las Glicinas   Macho 2017-07-21 00:00:00 Ternero  
- 9 SZ208H865 Las Glicinas   Macho 2017-07-20 00:00:00 Ternero  
-10 SZ208H818 Las Glicinas   Macho 2017-07-24 00:00:00 Ternero  
+ 1 JM173A252 La Alameda     Macho 2017-07-24 00:00:00 Ternero  
+ 2 CW828Z158 La Rosita      Macho 2017-07-20 00:00:00 Ternero  
+ 3 JM173A274 La Alameda     Macho 2017-07-21 00:00:00 Ternero  
+ 4 OH874D871 La Alameda     Macho 2017-07-21 00:00:00 Ternero  
+ 5 NS509G975 Los Corralitos Macho 2017-07-22 00:00:00 Ternero  
+ 6 SZ208I511 Las Glicinas   Macho 2017-07-21 00:00:00 Ternero  
+ 7 IA671B212 La Alameda     Macho 2017-07-24 00:00:00 Ternero  
+ 8 PO150A642 Los Corralitos Macho 2017-07-20 00:00:00 Ternero  
+ 9 SZ208H840 Las Glicinas   Macho 2017-07-24 00:00:00 Ternero  
+10 NS509H025 Los Corralitos Macho 2017-07-22 00:00:00 Ternero  
 # … with 40 more rows, and 5 more variables: Fecha &lt;dttm&gt;,
 #   Hora &lt;dttm&gt;, Peso &lt;dbl&gt;, log_peso &lt;dbl&gt;, peso2 &lt;dbl&gt;</code></pre>
 <div class="sourceCode">
@@ -2750,20 +2853,21 @@ Contenidos
 # Groups:   Procedencia [7]
    IDV       Procedencia Sexo  `Fecha Ingreso`     Categoria
    &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt; &lt;dttm&gt;              &lt;chr&gt;    
- 1 GH738B351 Don Alberto Macho 2017-06-16 00:00:00 Ternero  
- 2 GH738B383 Don Alberto Macho 2017-06-16 00:00:00 Ternero  
+ 1 GH738B338 Don Alberto Macho 2017-06-16 00:00:00 Ternero  
+ 2 GH738B354 Don Alberto Macho 2017-07-21 00:00:00 Ternero  
  3 GH738B326 Don Alberto Macho 2017-07-20 00:00:00 Ternero  
- 4 GH738B348 Don Alberto Macho 2017-07-23 00:00:00 Ternero  
- 5 GH738B372 Don Alberto Macho 2017-07-24 00:00:00 Ternero  
- 6 GH738B350 Don Alberto Macho 2017-07-22 00:00:00 Ternero  
- 7 GH738B347 Don Alberto Macho 2017-07-23 00:00:00 Ternero  
- 8 GH738B343 Don Alberto Macho 2017-06-16 00:00:00 Ternero  
- 9 GH738B381 Don Alberto Macho 2017-07-22 00:00:00 Ternero  
-10 GH738B332 Don Alberto Macho 2017-07-23 00:00:00 Ternero  
+ 4 GH738B381 Don Alberto Macho 2017-07-22 00:00:00 Ternero  
+ 5 GH738B368 Don Alberto Macho 2017-06-16 00:00:00 Ternero  
+ 6 GH738B380 Don Alberto Macho 2017-07-21 00:00:00 Ternero  
+ 7 GH738B350 Don Alberto Macho 2017-07-22 00:00:00 Ternero  
+ 8 GH738B330 Don Alberto Macho 2017-06-16 00:00:00 Ternero  
+ 9 GH738B386 Don Alberto Macho 2017-07-21 00:00:00 Ternero  
+10 GH738B357 Don Alberto Macho 2017-06-16 00:00:00 Ternero  
 # … with 60 more rows, and 5 more variables: Fecha &lt;dttm&gt;,
 #   Hora &lt;dttm&gt;, Peso &lt;dbl&gt;, log_peso &lt;dbl&gt;, peso2 &lt;dbl&gt;</code></pre>
 </div>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2779,7 +2883,9 @@ Contenidos
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-<p>Material preparado por <a href="https://github.com/Estadistica-FCA">Cátedra de Estadística FCA-UNL</a></p>
+<p>Material preparado por <a
+href="https://github.com/Estadistica-FCA">Cátedra de Estadística
+FCA-UNL</a></p>
 <p style="text-align: center;">
   <center>
     <img src="assets/logo_FCA_inv.png" style="height:50px;"/>

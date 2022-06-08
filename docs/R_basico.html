@@ -2034,7 +2034,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2111,17 +2111,27 @@ Contenidos
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#operadores-matemáticos-y-lógicos">Operadores matemáticos y lógicos</a></li>
+<li><a href="#operadores-matemáticos-y-lógicos">Operadores matemáticos y
+lógicos</a></li>
 <li><a href="#variables-y-objetos">Variables y objetos</a></li>
 <li><a href="#tipos-de-datos">Tipos de datos</a></li>
 <li><a href="#estructura-de-datos">Estructura de datos</a></li>
 </ul>
 </nav>
 </div>
-<p><strong>R</strong> es un lenguaje de programación orientado al análisis estadístico. Como todo lenguaje tiene sus particularidades. A continuación vamos a ver algunos aspectos básicos de dicho lenguaje que nos permitirá avanzar con las funciones que vamos a usar para analizar datos.</p>
-<h2 id="operadores-matemáticos-y-lógicos">Operadores matemáticos y lógicos</h2>
-<p>Las operaciones matemáticas básicas se realizan usando los símbolos convencionales: suma (<code>+</code>), resta (<code>-</code>), división (<code>/</code>), producto (<code>*</code>) y potencia (<code>^</code>)</p>
-<p>Por ejemplo, <span class="math inline">\(1 + \left( 3 \times 4 + \dfrac{5 -2}{3} \right)^2\)</span> en <strong>R</strong> es:</p>
+<p><strong>R</strong> es un lenguaje de programación orientado al
+análisis estadístico. Como todo lenguaje tiene sus particularidades. A
+continuación vamos a ver algunos aspectos básicos de dicho lenguaje que
+nos permitirá avanzar con las funciones que vamos a usar para analizar
+datos.</p>
+<h2 id="operadores-matemáticos-y-lógicos">Operadores matemáticos y
+lógicos</h2>
+<p>Las operaciones matemáticas básicas se realizan usando los símbolos
+convencionales: suma (<code>+</code>), resta (<code>-</code>), división
+(<code>/</code>), producto (<code>*</code>) y potencia
+(<code>^</code>)</p>
+<p>Por ejemplo, <span class="math inline">\(1 + \left( 3 \times 4 +
+\dfrac{5 -2}{3} \right)^2\)</span> en <strong>R</strong> es:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fl'>1</span> <span class='op'>+</span> <span class='op'>(</span><span class='fl'>3</span> <span class='op'>*</span> <span class='fl'>4</span> <span class='op'>+</span> <span class='op'>(</span><span class='fl'>5</span> <span class='op'>-</span> <span class='fl'>2</span><span class='op'>)</span><span class='op'>/</span><span class='fl'>3</span><span class='op'>)</span><span class='op'>^</span><span class='fl'>2</span>
@@ -2129,7 +2139,12 @@ Contenidos
 </div>
 <pre><code>[1] 170</code></pre>
 </div>
-<p>También se pueden evaluar expresiones lógicas: igual (<code>==</code>), distinto (<code>!=</code>), mayor que (<code>&gt;</code>), menor que (<code>&lt;</code>), mayor o igual que (<code>&gt;=</code>), menor o igual que (<code>&lt;=</code>). El resultado es <code>TRUE</code> (verdadero) o <code>FALSE</code> (falso).</p>
+<p>También se pueden evaluar expresiones lógicas: igual
+(<code>==</code>), distinto (<code>!=</code>), mayor que
+(<code>&gt;</code>), menor que (<code>&lt;</code>), mayor o igual que
+(<code>&gt;=</code>), menor o igual que (<code>&lt;=</code>). El
+resultado es <code>TRUE</code> (verdadero) o <code>FALSE</code>
+(falso).</p>
 <p>Por ejemplo, podemos evaluar si 3 es igual 4</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2146,8 +2161,11 @@ Contenidos
 </div>
 <pre><code>[1] TRUE</code></pre>
 </div>
-<p>También se pueden combinar con los operadores <em>intersección</em> (<code>&amp;</code>), <em>unión</em> (<code>|</code>) y <em>negación</em> (<code>!</code>).</p>
-<p>Por ejemplo, evaluar si se cumplen las dos cosas anteriores a la vez</p>
+<p>También se pueden combinar con los operadores <em>intersección</em>
+(<code>&amp;</code>), <em>unión</em> (<code>|</code>) y
+<em>negación</em> (<code>!</code>).</p>
+<p>Por ejemplo, evaluar si se cumplen las dos cosas anteriores a la
+vez</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fl'>3</span> <span class='op'>==</span> <span class='fl'>4</span> <span class='op'>&amp;</span> <span class='fl'>5</span> <span class='op'>&gt;=</span> <span class='fl'>3</span>
@@ -2155,7 +2173,9 @@ Contenidos
 </div>
 <pre><code>[1] FALSE</code></pre>
 </div>
-<p>Devuelve <code>FALSE</code> porque <code>3 == 4</code> no es verdadero. Si reemplazamos <code>&amp;</code> por <code>|</code> va a devolver evaluar si una de las dos se cumple:</p>
+<p>Devuelve <code>FALSE</code> porque <code>3 == 4</code> no es
+verdadero. Si reemplazamos <code>&amp;</code> por <code>|</code> va a
+devolver evaluar si una de las dos se cumple:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fl'>3</span> <span class='op'>==</span> <span class='fl'>4</span> <span class='op'>|</span> <span class='fl'>5</span> <span class='op'>&gt;=</span> <span class='fl'>3</span>
@@ -2171,18 +2191,31 @@ Contenidos
 </div>
 <pre><code>[1] TRUE</code></pre>
 </div>
-<p>En este caso primero evalúa <code>4 * 2</code> y luego compara el resultado con <code>8</code></p>
+<p>En este caso primero evalúa <code>4 * 2</code> y luego compara el
+resultado con <code>8</code></p>
 <h2 id="variables-y-objetos">Variables y objetos</h2>
-<p>Un objeto es un espacio de la memoria que almacena un pedazo de información (una cifra, un conjunto de números, el resultado de un análisis, etc). También se denomina <em>variables</em> ya que su contenido puede cambiar. En <strong>R</strong> prácticamente todo puede representarse como un <em>objeto</em>.</p>
-<p>Los objetos o variables se crean <em>asignandoles</em> informacicon (números, letras, resultados de operaciones, etc), con el símbolo <code>&lt;-</code> (<code>ALT + -</code>) o <code>=</code>. Esta informacion se puede recuperar, modificar o utilizar para otros cálculos.</p>
-<p>Supongamos que queremos asignar el valor 2 a la variable <code>x</code>.</p>
+<p>Un objeto es un espacio de la memoria que almacena un pedazo de
+información (una cifra, un conjunto de números, el resultado de un
+análisis, etc). También se denomina <em>variables</em> ya que su
+contenido puede cambiar. En <strong>R</strong> prácticamente todo puede
+representarse como un <em>objeto</em>.</p>
+<p>Los objetos o variables se crean <em>asignandoles</em> informacicon
+(números, letras, resultados de operaciones, etc), con el símbolo
+<code>&lt;-</code> (<code>ALT + -</code>) o <code>=</code>. Esta
+informacion se puede recuperar, modificar o utilizar para otros
+cálculos.</p>
+<p>Supongamos que queremos asignar el valor 2 a la variable
+<code>x</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fl'>2</span>
 </code></pre>
 </div>
 </div>
-<p>En la consola vuelve a aparecer el simbolo <code>&gt;</code> y nada más. En el ambiente se ve una entrada que dice <code>x</code> y el valor. Podemos recuperar el valor en la consola tipeando el nombre del objeto:</p>
+<p>En la consola vuelve a aparecer el simbolo <code>&gt;</code> y nada
+más. En el ambiente se ve una entrada que dice <code>x</code> y el
+valor. Podemos recuperar el valor en la consola tipeando el nombre del
+objeto:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>x</span>
@@ -2190,7 +2223,8 @@ Contenidos
 </div>
 <pre><code>[1] 2</code></pre>
 </div>
-<p>Tambien podemos reusarlo en otro calculo, por ejemplo obtener 2 veces <code>x</code>.</p>
+<p>Tambien podemos reusarlo en otro calculo, por ejemplo obtener 2 veces
+<code>x</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fl'>2</span> <span class='op'>*</span> <span class='va'>x</span>
@@ -2207,7 +2241,11 @@ Contenidos
 </div>
 <pre><code>[1] 5</code></pre>
 </div>
-<p><strong>Aclaración</strong> <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></svg>: los nombres de las variables no deben empezar con números ni contener espacios. No pueden usarse operadores (<code>*+-/&amp;%</code>) en los nombres pero puede usarse <code>.</code> o <code>_</code>.</p>
+<p><strong>Aclaración</strong>
+<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></svg>:
+los nombres de las variables no deben empezar con números ni contener
+espacios. No pueden usarse operadores (<code>*+-/&amp;%</code>) en los
+nombres pero puede usarse <code>.</code> o <code>_</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mal</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>2x <span class="ot">&lt;-</span> <span class="dv">3</span></span>
@@ -2232,7 +2270,10 @@ Contenidos
 <pre><code>[1] FALSE</code></pre>
 </div>
 <h3 id="vectores">Vectores</h3>
-<p>Son los objetos más simples a partir de los cuales se construyen otros tipos de objetos. Se crean utilizando la función <code>c()</code> (<em>combine</em>) para “combinar” <strong>datos del mismo tipo</strong></p>
+<p>Son los objetos más simples a partir de los cuales se construyen
+otros tipos de objetos. Se crean utilizando la función <code>c()</code>
+(<em>combine</em>) para “combinar” <strong>datos del mismo
+tipo</strong></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>13</span>, <span class='fl'>45</span>, <span class='fl'>67</span>, <span class='fl'>45</span><span class='op'>)</span>
@@ -2241,8 +2282,11 @@ Contenidos
 </div>
 <pre><code>[1] 13 45 67 45</code></pre>
 </div>
-<p>En el caso de mezclar de datos, <strong>R</strong> los va a <em>convertir</em> al tipo de datos más simple.</p>
-<p>Por ejemplo: si queremos crear un vector con 3 valores: lógico, numérico y texto, <strong>R</strong> va a asumir que todos los elementos son de tipo <em>texto</em></p>
+<p>En el caso de mezclar de datos, <strong>R</strong> los va a
+<em>convertir</em> al tipo de datos más simple.</p>
+<p>Por ejemplo: si queremos crear un vector con 3 valores: lógico,
+numérico y texto, <strong>R</strong> va a asumir que todos los elementos
+son de tipo <em>texto</em></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>TRUE</span>, <span class='fl'>34</span>, <span class='st'>"hola"</span><span class='op'>)</span>
@@ -2251,8 +2295,10 @@ Contenidos
 </div>
 <pre><code>[1] &quot;TRUE&quot; &quot;34&quot;   &quot;hola&quot;</code></pre>
 </div>
-<p>Los vectores están indexados. Se puede acceder a sus elementos usando el operador <code>[ ]</code> e indicando el número de orden.</p>
-<p>Por ejemplo: para recuperar el 3er elemento del vector <code>x</code></p>
+<p>Los vectores están indexados. Se puede acceder a sus elementos usando
+el operador <code>[ ]</code> e indicando el número de orden.</p>
+<p>Por ejemplo: para recuperar el 3er elemento del vector
+<code>x</code></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>y</span><span class='op'>[</span><span class='fl'>3</span><span class='op'>]</span>
@@ -2262,15 +2308,22 @@ Contenidos
 </div>
 <p>Veremos más adelante los distintos tipos.</p>
 <h3 id="funciones-y-argumentos">Funciones y argumentos</h3>
-<p>Para crear los vectores utilizamos una funcion <code>c()</code>. Las funciones dentro de <strong>R</strong> tienen la siguiente forma</p>
+<p>Para crear los vectores utilizamos una funcion <code>c()</code>. Las
+funciones dentro de <strong>R</strong> tienen la siguiente forma</p>
 <p><code>nombre_funcion(arg1, arg2, ...)</code></p>
-<p>donde <code>arg</code> son los argumentos (valores de entrada u opciones). Algunos argumentos toman valores por defecto otros hay que declararlos.</p>
-<p>Por ejemplo, la función <code>round</code>()` tiene los argumentos:</p>
+<p>donde <code>arg</code> son los argumentos (valores de entrada u
+opciones). Algunos argumentos toman valores por defecto otros hay que
+declararlos.</p>
+<p>Por ejemplo, la función <code>round</code>()` tiene los
+argumentos:</p>
 <ul>
-<li><code>x</code>, para pasar el número o vector numérico que queremos redondear</li>
-<li><code>digits = 0</code> para indicar el numero de dígitos a usar, por defecto 0.</li>
+<li><code>x</code>, para pasar el número o vector numérico que queremos
+redondear</li>
+<li><code>digits = 0</code> para indicar el numero de dígitos a usar,
+por defecto 0.</li>
 </ul>
-<p>Supongamos que queremos redondear el numero <code>3.141593</code> a 3 dígitos.</p>
+<p>Supongamos que queremos redondear el numero <code>3.141593</code> a 3
+dígitos.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Indicando los argumentos</span>
@@ -2285,7 +2338,8 @@ Contenidos
 </div>
 <pre><code>[1] 3.142</code></pre>
 </div>
-<p>En este último caso, el orden de los argumentos es clave ya que <strong>R</strong> asigna los valores en función de la posición.</p>
+<p>En este último caso, el orden de los argumentos es clave ya que
+<strong>R</strong> asigna los valores en función de la posición.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Sin indicar los argumentos</span>
@@ -2294,7 +2348,8 @@ Contenidos
 </div>
 <pre><code>[1] 3</code></pre>
 </div>
-<p>Devuelve <code>3</code> por considera que queremos redondear el número <code>3</code></p>
+<p>Devuelve <code>3</code> por considera que queremos redondear el
+número <code>3</code></p>
 <h2 id="tipos-de-datos">Tipos de datos</h2>
 <h3 id="numéricos-numeric">Numéricos (<code>numeric</code>)</h3>
 <p>Números racionales (enteros o con coma).</p>
@@ -2306,7 +2361,8 @@ Contenidos
 </div>
 <pre><code>[1] &quot;numeric&quot;</code></pre>
 </div>
-<p>Los números enteros se tratan como <code>numeric</code> a menos que se los convierta con <code>as.integer()</code>.</p>
+<p>Los números enteros se tratan como <code>numeric</code> a menos que
+se los convierta con <code>as.integer()</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/integer.html'>as.integer</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
@@ -2329,7 +2385,8 @@ Contenidos
 <pre><code>[1] 4</code></pre>
 </div>
 <h3 id="texto-character">Texto (<code>character</code>)</h3>
-<p>Cadenas de texto o número delimitadas por comillas (simples o dobles, nom mezclar).</p>
+<p>Cadenas de texto o número delimitadas por comillas (simples o dobles,
+nom mezclar).</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"hola"</span>, <span class='st'>'3'</span><span class='op'>)</span>
@@ -2338,7 +2395,8 @@ Contenidos
 </div>
 <pre><code>[1] &quot;character&quot;</code></pre>
 </div>
-<p>Lógicamente no se pueden realizar operaciones numéricas. <strong>R</strong> avisa y devuelve <code>NA</code></p>
+<p>Lógicamente no se pueden realizar operaciones numéricas.
+<strong>R</strong> avisa y devuelve <code>NA</code></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
@@ -2347,7 +2405,8 @@ Contenidos
 <pre><code>[1] NA</code></pre>
 </div>
 <h3 id="lógicos-logic">Lógicos (<code>logic</code>)</h3>
-<p>Condición verdadero (<code>TRUE</code> o <code>T</code>) o falso (<code>FALSE</code> o <code>F</code>)</p>
+<p>Condición verdadero (<code>TRUE</code> o <code>T</code>) o falso
+(<code>FALSE</code> o <code>F</code>)</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>logico</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='cn'>T</span>, <span class='cn'>F</span>, <span class='cn'>T</span>, <span class='cn'>TRUE</span>, <span class='cn'>FALSE</span>, <span class='cn'>F</span><span class='op'>)</span>
@@ -2366,7 +2425,9 @@ Contenidos
 <pre><code>[1] FALSE  TRUE FALSE  TRUE  TRUE FALSE FALSE FALSE</code></pre>
 </div>
 <h3 id="otros-tipos-de-datos">Otros tipos de datos</h3>
-<p>Los valores faltantes se simbolizan en <strong>R</strong> con <code>NA</code> (<em>not available</em>). Indican que debería haber un valor pero que está faltando.</p>
+<p>Los valores faltantes se simbolizan en <strong>R</strong> con
+<code>NA</code> (<em>not available</em>). Indican que debería haber un
+valor pero que está faltando.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span>, <span class='cn'>NA</span>, <span class='fl'>4</span><span class='op'>)</span>
@@ -2375,7 +2436,8 @@ Contenidos
 </div>
 <pre><code>[1] FALSE FALSE FALSE  TRUE FALSE</code></pre>
 </div>
-<p>A diferencia del <code>NA</code>, un valor de tipo <code>NULL</code> indica que no hay información y que tampoco se esperaba que la haya.</p>
+<p>A diferencia del <code>NA</code>, un valor de tipo <code>NULL</code>
+indica que no hay información y que tampoco se esperaba que la haya.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span>, <span class='cn'>NULL</span>, <span class='fl'>4</span><span class='op'>)</span>
@@ -2384,7 +2446,8 @@ Contenidos
 </div>
 <pre><code>[1] 1 2 3 4</code></pre>
 </div>
-<p>Algunas operaciones matemáticas devuelven valores <code>NaN</code> (<em>not a number</em>) cuando no están definidas, por ejemplo:</p>
+<p>Algunas operaciones matemáticas devuelven valores <code>NaN</code>
+(<em>not a number</em>) cuando no están definidas, por ejemplo:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fl'>0</span><span class='op'>/</span><span class='fl'>0</span>
@@ -2402,7 +2465,10 @@ Contenidos
 </div>
 <h2 id="estructura-de-datos">Estructura de datos</h2>
 <h3 id="matriz-matrix">Matriz (<code>matrix</code>)</h3>
-<p>Colección de vectores de <em>igual longitud y mismo tipo de datos</em>. Se crea con la función <code>matrix()</code>, o combinando filas o columnas de igual longitud con <code>rbind()</code> o <code>cbind()</code>.</p>
+<p>Colección de vectores de <em>igual longitud y mismo tipo de
+datos</em>. Se crea con la función <code>matrix()</code>, o combinando
+filas o columnas de igual longitud con <code>rbind()</code> o
+<code>cbind()</code>.</p>
 <p>Por ejemplo la matriz:</p>
 <p><span class="math display">\[
 \mathbf{M} = \left[\begin{array}{c c}
@@ -2422,7 +2488,9 @@ Contenidos
 [2,]    2    5
 [3,]    3    6</code></pre>
 </div>
-<p>Se puede indexar usando <code>[n, p]</code> donde <code>n</code> es el numero de fila y <code>p</code> numero de columna. Por ejemplo para obtener el elemento <span class="math inline">\(m_{12}\)</span></p>
+<p>Se puede indexar usando <code>[n, p]</code> donde <code>n</code> es
+el numero de fila y <code>p</code> numero de columna. Por ejemplo para
+obtener el elemento <span class="math inline">\(m_{12}\)</span></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>M</span><span class='op'>[</span><span class='fl'>1</span>,<span class='fl'>2</span><span class='op'>]</span>
@@ -2439,7 +2507,8 @@ Contenidos
 <pre><code>[1] 4 5 6</code></pre>
 </div>
 <h3 id="listas-list">Listas (<code>list</code>)</h3>
-<p>Es una generalización de los vectores ya que <em>los elementos pueden ser de igual o diferente tipo de datos</em></p>
+<p>Es una generalización de los vectores ya que <em>los elementos pueden
+ser de igual o diferente tipo de datos</em></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>lst</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fl'>23</span>, <span class='st'>"hola"</span>, <span class='cn'>TRUE</span><span class='op'>)</span>
@@ -2464,9 +2533,13 @@ Contenidos
 </div>
 <pre><code>[1] &quot;hola&quot;</code></pre>
 </div>
-<p>Cada elemento a su vez puede ser cualquier objeto de los vistos anteriormente.</p>
-<h3 id="hoja-de-datos-data.frame">Hoja de datos (<code>data.frame</code>)</h3>
-<p>Similares a las matrices pero cada columna puede ser de un tipo de dato diferente. Útil para guardar datos donde cada fila es un caso y cada columna una variable.</p>
+<p>Cada elemento a su vez puede ser cualquier objeto de los vistos
+anteriormente.</p>
+<h3 id="hoja-de-datos-data.frame">Hoja de datos
+(<code>data.frame</code>)</h3>
+<p>Similares a las matrices pero cada columna puede ser de un tipo de
+dato diferente. Útil para guardar datos donde cada fila es un caso y
+cada columna una variable.</p>
 <p>Supongamos que tenemos la tabla de datos:</p>
 <table>
 <thead>
@@ -2522,7 +2595,9 @@ Contenidos
 4    4 Baguette 11          28
 5    5    Tijetera          31</code></pre>
 </div>
-<p>Al igual que las matrices, un <code>data.frame</code> se puede indexar con <code>[ ]</code>. Por ejemplo, si quisieramos El bombre de la varidedad de la fila 2</p>
+<p>Al igual que las matrices, un <code>data.frame</code> se puede
+indexar con <code>[ ]</code>. Por ejemplo, si quisieramos El bombre de
+la varidedad de la fila 2</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>trigo</span><span class='op'>[</span><span class='fl'>2</span>, <span class='fl'>3</span><span class='op'>]</span>
@@ -2539,7 +2614,8 @@ Contenidos
 <pre><code>  lote  variedad rendimiento
 2    2 Escorpion          36</code></pre>
 </div>
-<p>Tambien podemos hacer consultas más específicas: “Lotes con rendimiento mayor a 35 qq/ha”</p>
+<p>Tambien podemos hacer consultas más específicas: “Lotes con
+rendimiento mayor a 35 qq/ha”</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>trigo</span><span class='op'>[</span><span class='va'>trigo</span><span class='op'>$</span><span class='va'>rendimiento</span> <span class='op'>&gt;</span> <span class='fl'>35</span>, <span class='op'>]</span>
@@ -2549,7 +2625,10 @@ Contenidos
 2    2 Escorpion          36
 3    3    Yarara          40</code></pre>
 </div>
-<p>Las variables o columnas se pueden acceder individualmente usando o el operador <code>$</code> seguido dle nombre de la columna o <code>[, "nombre"]</code>, o <code>[, posicion]</code>. Ejemplo: extraer la columna <code>rendimiento</code> que es la número 3</p>
+<p>Las variables o columnas se pueden acceder individualmente usando o
+el operador <code>$</code> seguido dle nombre de la columna o
+<code>[, "nombre"]</code>, o <code>[, posicion]</code>. Ejemplo: extraer
+la columna <code>rendimiento</code> que es la número 3</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>trigo</span><span class='op'>$</span><span class='va'>rendimiento</span>
@@ -2567,8 +2646,13 @@ Contenidos
 </div>
 <pre><code>[1] 34 36 40 28 31</code></pre>
 </div>
-<h3 id="factores-factor-y-ordered">Factores (<code>factor</code> y <code>ordered</code>)</h3>
-<p>Si los elementos de vector de tipo texto (<code>character</code>) y representan niveles nominales (categorías), el objeto puede convertirse a <code>factor</code> de modo tal que los valores son reemplazados por un número que se asocia a los niveles del factor (ordenados alfabeticamente, a menos que se indique otra cosa).</p>
+<h3 id="factores-factor-y-ordered">Factores (<code>factor</code> y
+<code>ordered</code>)</h3>
+<p>Si los elementos de vector de tipo texto (<code>character</code>) y
+representan niveles nominales (categorías), el objeto puede convertirse
+a <code>factor</code> de modo tal que los valores son reemplazados por
+un número que se asocia a los niveles del factor (ordenados
+alfabeticamente, a menos que se indique otra cosa).</p>
 <p>Un ejemplo de un vector tipo <code>character</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2578,7 +2662,9 @@ Contenidos
 </div>
 <pre><code>[1] &quot;bajo&quot;  &quot;medio&quot; &quot;alto&quot;  &quot;alto&quot;  &quot;bajo&quot;  &quot;bajo&quot; </code></pre>
 </div>
-<p>Sólo se muestran los valores (<code>bajo</code>, <code>medio</code> y <code>alto</code>). No hay información de niveles. Ahora si aplicamos <code>factor(x)</code>:</p>
+<p>Sólo se muestran los valores (<code>bajo</code>, <code>medio</code> y
+<code>alto</code>). No hay información de niveles. Ahora si aplicamos
+<code>factor(x)</code>:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
@@ -2588,7 +2674,10 @@ Contenidos
 <pre><code>[1] bajo  medio alto  alto  bajo  bajo 
 Levels: alto bajo medio</code></pre>
 </div>
-<p>Los valores pasaron al atributo <code>levels</code> y los datos fueron reemplazados por los identificadores <code>2</code>, <code>3</code>, y <code>1</code> según el orden alfabético de los niveles.</p>
+<p>Los valores pasaron al atributo <code>levels</code> y los datos
+fueron reemplazados por los identificadores <code>2</code>,
+<code>3</code>, y <code>1</code> según el orden alfabético de los
+niveles.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>y</span><span class='op'>)</span>
@@ -2596,7 +2685,10 @@ Levels: alto bajo medio</code></pre>
 </div>
 <pre><code>[1] 2 3 1 1 2 2</code></pre>
 </div>
-<p>Cuando los niveles tienen una jerarquía u orden, se puede especificar este tipo de relación mediante <code>as.ordered()</code> que convierte el <code>factor</code> en uno especial <code>ordered</code> agregando la relación entre los niveles</p>
+<p>Cuando los niveles tienen una jerarquía u orden, se puede especificar
+este tipo de relación mediante <code>as.ordered()</code> que convierte
+el <code>factor</code> en uno especial <code>ordered</code> agregando la
+relación entre los niveles</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>z</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>x</span>, levels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'bajo'</span>, <span class='st'>'medio'</span>, <span class='st'>'alto'</span><span class='op'>)</span><span class='op'>)</span>
@@ -2607,8 +2699,10 @@ Levels: alto bajo medio</code></pre>
 <pre><code>[1] bajo  medio alto  alto  bajo  bajo 
 Levels: bajo &lt; medio &lt; alto</code></pre>
 </div>
-<p>Los factores como cualquier vector tambien se indexan con <code>[ ]</code>.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Los factores como cualquier vector tambien se indexan con
+<code>[ ]</code>.</p>
+<div class="sourceCode" id="cb46"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2633,7 +2727,9 @@ Levels: bajo &lt; medio &lt; alto</code></pre>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-<p>Material preparado por <a href="https://github.com/Estadistica-FCA">Cátedra de Estadística FCA-UNL</a></p>
+<p>Material preparado por <a
+href="https://github.com/Estadistica-FCA">Cátedra de Estadística
+FCA-UNL</a></p>
 <p style="text-align: center;">
   <center>
     <img src="assets/logo_FCA_inv.png" style="height:50px;"/>

@@ -2034,7 +2034,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2111,16 +2111,27 @@ Contenidos
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#alternativa-1-install.packageslibrary">Alternativa 1: <code>install.packages()/library()</code></a></li>
-<li><a href="#alternativa-2-pacman">Alternativa 2: <code>pacman</code></a></li>
-<li><a href="#alternativa-3-panel-packages-de-rstudio">Alternativa 3: Panel Packages de RStudio</a></li>
-<li><a href="#library-pacman-o-panel-packages">¿<code>library()</code>, <code>pacman</code> o panel <code>Packages</code>?</a></li>
+<li><a href="#alternativa-1-install.packageslibrary">Alternativa 1:
+<code>install.packages()/library()</code></a></li>
+<li><a href="#alternativa-2-pacman">Alternativa 2:
+<code>pacman</code></a></li>
+<li><a href="#alternativa-3-panel-packages-de-rstudio">Alternativa 3:
+Panel Packages de RStudio</a></li>
+<li><a href="#library-pacman-o-panel-packages">¿<code>library()</code>,
+<code>pacman</code> o panel <code>Packages</code>?</a></li>
 </ul>
 </nav>
 </div>
-<p><strong>R</strong> es modular ya que consta de un núcleo básico de programas para realizar operaciones, gráficos y análisis. Estos programas vienen incluidos en el paquete de instalación. No obstante, existe un repositorio denominado CRAN (<em>Comprehensive R Archive Network</em>) donde constantemente se van agregando nuevos paquetes para expandir las funcionalidades de <strong>R</strong>.</p>
+<p><strong>R</strong> es modular ya que consta de un núcleo básico de
+programas para realizar operaciones, gráficos y análisis. Estos
+programas vienen incluidos en el paquete de instalación. No obstante,
+existe un repositorio denominado CRAN (<em>Comprehensive R Archive
+Network</em>) donde constantemente se van agregando nuevos paquetes para
+expandir las funcionalidades de <strong>R</strong>.</p>
 <blockquote>
-<p><strong>IMPORTANTE</strong> Para poder acceder a estos paquetes extra, primero es necesario instalarlos en nuestro sistema y luego, cuando los necesitemos, cargarlo en la sesión de trabajo.</p>
+<p><strong>IMPORTANTE</strong> Para poder acceder a estos paquetes
+extra, primero es necesario instalarlos en nuestro sistema y luego,
+cuando los necesitemos, cargarlo en la sesión de trabajo.</p>
 </blockquote>
 <p>Para esto tenemos 3 alternativoas:</p>
 <ol type="1">
@@ -2128,9 +2139,13 @@ Contenidos
 <li>Paquete <code>pacman</code> (recomendada)</li>
 <li>Panel <code>Packages</code> de <strong>RStudio</strong></li>
 </ol>
-<p>A continuación se muestra un ejemplo para instalar los paquetes <code>nortest</code> y <code>moments</code></p>
-<h2 id="alternativa-1-install.packageslibrary">Alternativa 1: <code>install.packages()/library()</code></h2>
-<p>Si queremos instalar uno paquetes necesitamos correr por <strong>única vez</strong> la función <code>install.packages()</code> indicando el nombre del paquete entre comillas:</p>
+<p>A continuación se muestra un ejemplo para instalar los paquetes
+<code>nortest</code> y <code>moments</code></p>
+<h2 id="alternativa-1-install.packageslibrary">Alternativa 1:
+<code>install.packages()/library()</code></h2>
+<p>Si queremos instalar uno paquetes necesitamos correr por
+<strong>única vez</strong> la función <code>install.packages()</code>
+indicando el nombre del paquete entre comillas:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Un solo paquete</span>
@@ -2138,7 +2153,9 @@ Contenidos
 </code></pre>
 </div>
 </div>
-<p>Si queremos instalar varios paquetes a la vez podemos crear un vector que contenga los nombres de los paquetes y usarlo como argumento en la función.</p>
+<p>Si queremos instalar varios paquetes a la vez podemos crear un vector
+que contenga los nombres de los paquetes y usarlo como argumento en la
+función.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Varios paquetes</span>
@@ -2147,7 +2164,9 @@ Contenidos
 </code></pre>
 </div>
 </div>
-<p>Una vez instalados, los paquetes se deben <em>cargar</em> en el entorno o sesión de trabajo usando la función <code>library()</code>.</p>
+<p>Una vez instalados, los paquetes se deben <em>cargar</em> en el
+entorno o sesión de trabajo usando la función
+<code>library()</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Cargar el paquerte agricolae</span>
@@ -2155,15 +2174,22 @@ Contenidos
 </code></pre>
 </div>
 </div>
-<p>A diferencia de <code>install.packages()</code>, la carga de los paquetes es individual, es decir, debejos ejecutar <code>library()</code> por cada paquete que querramos cargar.</p>
-<p>Alternativamente si queremos usar alguna función específica sin cargar el paquete entero podemos usar <code>::</code>. Por ejemplo, lara usar la función <code>skewness()</code> del paquete <code>moments</code> podemos hacer</p>
+<p>A diferencia de <code>install.packages()</code>, la carga de los
+paquetes es individual, es decir, debejos ejecutar
+<code>library()</code> por cada paquete que querramos cargar.</p>
+<p>Alternativamente si queremos usar alguna función específica sin
+cargar el paquete entero podemos usar <code>::</code>. Por ejemplo, lara
+usar la función <code>skewness()</code> del paquete <code>moments</code>
+podemos hacer</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>moments</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/moments/man/skewness.html'>skewness</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
-<p>Si por alguna circunstancia queremos removerlo del entorno de trabajo (no del sistemaa), es necesario usar la función <code>detach()</code></p>
+<p>Si por alguna circunstancia queremos removerlo del entorno de trabajo
+(no del sistemaa), es necesario usar la función
+<code>detach()</code></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Para remover el paquete moments</span>
@@ -2171,7 +2197,8 @@ Contenidos
 </code></pre>
 </div>
 </div>
-<p>Finalmente si queremos desinstalarlo de nuestra máquina, es necesario usar la función <code>remove.packages()</code></p>
+<p>Finalmente si queremos desinstalarlo de nuestra máquina, es necesario
+usar la función <code>remove.packages()</code></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Para remover el paquete moments</span>
@@ -2180,21 +2207,27 @@ Contenidos
 </div>
 </div>
 <h2 id="alternativa-2-pacman">Alternativa 2: <code>pacman</code></h2>
-<p>El proceso anterior se puede simplificar usando el paquete <code>pacman</code>. Pero primero hay que instalarlo <strong>por única vez</strong> usando <code>install.packages()</code>:</p>
+<p>El proceso anterior se puede simplificar usando el paquete
+<code>pacman</code>. Pero primero hay que instalarlo <strong>por única
+vez</strong> usando <code>install.packages()</code>:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"pacman"</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
-<p>Luego, cuando queremos usar un paquete o varios paquetes podemos llamarlos usando <code>p_load()</code>:</p>
+<p>Luego, cuando queremos usar un paquete o varios paquetes podemos
+llamarlos usando <code>p_load()</code>:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>pacman</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/pacman/man/p_load.html'>p_load</a></span><span class='op'>(</span><span class='va'>moments</span>, <span class='va'>nortest</span><span class='op'>)</span>  <span class='co'># no necesitamos usar comillas</span>
 </code></pre>
 </div>
 </div>
-<p>Esta función por defecto va a chequear si el o los paquetes indicados están instalados antes de cargarlos. Si algun paquete no está instalado, lo instala y después lo carga. Eso se controla con el argumento <code>install = FALSE</code>.</p>
+<p>Esta función por defecto va a chequear si el o los paquetes indicados
+están instalados antes de cargarlos. Si algun paquete no está instalado,
+lo instala y después lo carga. Eso se controla con el argumento
+<code>install = FALSE</code>.</p>
 <p>Para chequear si un paquete esta cargado:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2223,8 +2256,12 @@ Contenidos
 </code></pre>
 </div>
 </div>
-<h2 id="alternativa-3-panel-packages-de-rstudio">Alternativa 3: Panel Packages de RStudio</h2>
-<p><strong>RStudio</strong> cuenta con un panel desde donde podemos instalar y cargar paquetes. En ambos casos <strong>RStudio</strong> corre las funciones <code>install.packages()</code> y <code>library()</code>.</p>
+<h2 id="alternativa-3-panel-packages-de-rstudio">Alternativa 3: Panel
+Packages de RStudio</h2>
+<p><strong>RStudio</strong> cuenta con un panel desde donde podemos
+instalar y cargar paquetes. En ambos casos <strong>RStudio</strong>
+corre las funciones <code>install.packages()</code> y
+<code>library()</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-13"></span>
 <img src="assets/packages1.png" alt="Panel `Packages`" width="75%"  />
@@ -2233,7 +2270,8 @@ Figure 1: Panel <code>Packages</code>
 </p>
 </div>
 </div>
-<p>Para instalar por primera vez los paquetes se puede utilizar el ícono <em>Install</em> que abre el siguiente cuadro de diálogo.</p>
+<p>Para instalar por primera vez los paquetes se puede utilizar el ícono
+<em>Install</em> que abre el siguiente cuadro de diálogo.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-14"></span>
 <img src="assets/packages2.png" alt="Cuadro de diálogo para instalar paquetes" width="75%"  />
@@ -2242,11 +2280,25 @@ Figure 2: Cuadro de diálogo para instalar paquetes
 </p>
 </div>
 </div>
-<p>Por defecto, <strong>RStudio</strong> buscará e instalará los paquetes desde <em>CRAN</em>. En <code>Packages</code> hay que ingresar los nombres de los paquetes separados por comas. <strong>RStudio</strong> ofrece la posibilidad de ir completando el nombre si no nos acordamos.</p>
-<p>Finalmente, para cargar los paquetes podemos usar el panel <strong>Packages</strong>, buscar el paquete que queremos y tildar la casilla.</p>
-<h2 id="library-pacman-o-panel-packages">¿<code>library()</code>, <code>pacman</code> o panel <code>Packages</code>?</h2>
-<p>Si bien el panel <code>Packages</code> brinda una interfase para seleccionar y cargar los paquetes con un click, esta alternativa tiene una desventaja: <strong>hay que acordarse en futuras sesiones que es necesario cargar ese paquete</strong>. Es por eso que incluir un par de líneas en el script con la función <code>library()</code> o <code>pacman::p_load()</code>es mejor. <code>pacman</code> tiene la ventaja extra de chequear si el paquete está instalado o no.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Por defecto, <strong>RStudio</strong> buscará e instalará los
+paquetes desde <em>CRAN</em>. En <code>Packages</code> hay que ingresar
+los nombres de los paquetes separados por comas.
+<strong>RStudio</strong> ofrece la posibilidad de ir completando el
+nombre si no nos acordamos.</p>
+<p>Finalmente, para cargar los paquetes podemos usar el panel
+<strong>Packages</strong>, buscar el paquete que queremos y tildar la
+casilla.</p>
+<h2 id="library-pacman-o-panel-packages">¿<code>library()</code>,
+<code>pacman</code> o panel <code>Packages</code>?</h2>
+<p>Si bien el panel <code>Packages</code> brinda una interfase para
+seleccionar y cargar los paquetes con un click, esta alternativa tiene
+una desventaja: <strong>hay que acordarse en futuras sesiones que es
+necesario cargar ese paquete</strong>. Es por eso que incluir un par de
+líneas en el script con la función <code>library()</code> o
+<code>pacman::p_load()</code>es mejor. <code>pacman</code> tiene la
+ventaja extra de chequear si el paquete está instalado o no.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2262,7 +2314,9 @@ Figure 2: Cuadro de diálogo para instalar paquetes
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-<p>Material preparado por <a href="https://github.com/Estadistica-FCA">Cátedra de Estadística FCA-UNL</a></p>
+<p>Material preparado por <a
+href="https://github.com/Estadistica-FCA">Cátedra de Estadística
+FCA-UNL</a></p>
 <p style="text-align: center;">
   <center>
     <img src="assets/logo_FCA_inv.png" style="height:50px;"/>

@@ -2034,7 +2034,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2117,48 +2117,73 @@ Contenidos
 </nav>
 </div>
 <h2 id="qué-es-un-proyecto">¿Qué es un Proyecto?</h2>
-<p><strong>R</strong> trabaja con un directorio de trabajo o <em>working directory</em> que es la dirección o <em>path</em> que figura en el titulo del panel <strong>Console</strong>. Esto se puede averiguar con <code>getwd()</code></p>
+<p><strong>R</strong> trabaja con un directorio de trabajo o <em>working
+directory</em> que es la dirección o <em>path</em> que figura en el
+titulo del panel <strong>Console</strong>. Esto se puede averiguar con
+<code>getwd()</code></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>getwd</a></span><span class='op'>(</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
-<p>Por defecto es el directorio base del usuario que depende de cada plataforma. En linux es el <code>/home/usuario</code> en cambio en Windows es <code>C:/Users/usuario/Documents</code>.</p>
-<p>A menos que se especifique lo contrario, se asume que los archivos de entrada o salida se ubican en esa. Esto se puede modificar en cualquier momento con la función <code>setwd()</code>.</p>
+<p>Por defecto es el directorio base del usuario que depende de cada
+plataforma. En linux es el <code>/home/usuario</code> en cambio en
+Windows es <code>C:/Users/usuario/Documents</code>.</p>
+<p>A menos que se especifique lo contrario, se asume que los archivos de
+entrada o salida se ubican en esa. Esto se puede modificar en cualquier
+momento con la función <code>setwd()</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span><span class='op'>(</span><span class='st'>"ruta/a/otra/carpeta"</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
-<p><strong>RStudio</strong> extiende esta característica a través de los proyectos o <em>projects</em>. Cada proyecto es una carpeta o <em>folder</em> que contienen un archivo <code>.RProj</code> con algunas configuraciones específicas.</p>
-<p>Al abrir un proyecto, automáticamente se cambia el directorio de trabajo a esta carpeta. Esto permite organizar los archivos de datos, las salidas, los scripts, etc., dentro de un directorio de trabajo (<em>working directory</em>) y volver a ellos de manera más rápida, eficiente, y portable.</p>
+<p><strong>RStudio</strong> extiende esta característica a través de los
+proyectos o <em>projects</em>. Cada proyecto es una carpeta o
+<em>folder</em> que contienen un archivo <code>.RProj</code> con algunas
+configuraciones específicas.</p>
+<p>Al abrir un proyecto, automáticamente se cambia el directorio de
+trabajo a esta carpeta. Esto permite organizar los archivos de datos,
+las salidas, los scripts, etc., dentro de un directorio de trabajo
+(<em>working directory</em>) y volver a ellos de manera más rápida,
+eficiente, y portable.</p>
 <h2 id="cómo-crar-un-proyecto">¿Cómo crar un proyecto?</h2>
 <p>Para crear un proyecto en <strong>RStudio</strong>:</p>
 <ol type="1">
-<li>Ir a <code>File &gt; New project...</code> o bien el ícono <code>Create project</code> de la barra de herramientas.</li>
+<li>Ir a <code>File &gt; New project...</code> o bien el ícono
+<code>Create project</code> de la barra de herramientas.</li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="assets/new_project.png" width="75%"  /></p>
 </div>
 <ol start="2" type="1">
-<li>Seleccionar <code>New Directory</code> y en <code>Project type</code> seleccionar <code>New project</code>.</li>
+<li>Seleccionar <code>New Directory</code> y en
+<code>Project type</code> seleccionar <code>New project</code>.</li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="assets/new_project1.png" width="75%"  /><img src="assets/new_project2.png" width="75%"  /></p>
 </div>
 <ol start="3" type="1">
-<li><p>Una vez en el cuadro de diálogo <code>Create new project</code> ingresar el nombre del proyecto (e.g. <code>estadistica</code>) en <code>Directory name</code> que será a su vez el nombre de la carpeta que <strong>RStudio</strong> va a crear por nosotros.</p>
-<p>Luego en <code>Create project as a subdirectory of</code> indicar <em>donde</em> queremos que <strong>RStudio</strong> cree la carpeta.</p></li>
+<li><p>Una vez en el cuadro de diálogo <code>Create new project</code>
+ingresar el nombre del proyecto (e.g. <code>estadistica</code>) en
+<code>Directory name</code> que será a su vez el nombre de la carpeta
+que <strong>RStudio</strong> va a crear por nosotros.</p>
+<p>Luego en <code>Create project as a subdirectory of</code> indicar
+<em>donde</em> queremos que <strong>RStudio</strong> cree la
+carpeta.</p></li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="assets/new_project3.png" width="75%"  /></p>
 </div>
 <ol start="4" type="1">
-<li>Si todo sale bien, se crea la carpeta con el nombre que indicamos y dentro de ésta un archivo con extensión <code>.Rproj</code>. Este archivo solamente se usa para abrir el directorio. No se debe sobreescribir con el script.</li>
+<li>Si todo sale bien, se crea la carpeta con el nombre que indicamos y
+dentro de ésta un archivo con extensión <code>.Rproj</code>. Este
+archivo solamente se usa para abrir el directorio. No se debe
+sobreescribir con el script.</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2174,7 +2199,9 @@ Contenidos
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-<p>Material preparado por <a href="https://github.com/Estadistica-FCA">Cátedra de Estadística FCA-UNL</a></p>
+<p>Material preparado por <a
+href="https://github.com/Estadistica-FCA">Cátedra de Estadística
+FCA-UNL</a></p>
 <p style="text-align: center;">
   <center>
     <img src="assets/logo_FCA_inv.png" style="height:50px;"/>

@@ -2034,7 +2034,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2117,7 +2117,10 @@ Contenidos
 </ul>
 </nav>
 </div>
-<p>El entorno de trabajo de <strong>RStudio</strong> se divide en cuatro paneles. La disposición y contenido de los 4 paneles se puede personalizar yendo a <code>View &gt; Panes &gt; Panes Layout...</code>. A continuación la descripción de los paneles por defecto.</p>
+<p>El entorno de trabajo de <strong>RStudio</strong> se divide en cuatro
+paneles. La disposición y contenido de los 4 paneles se puede
+personalizar yendo a <code>View &gt; Panes &gt; Panes Layout...</code>.
+A continuación la descripción de los paneles por defecto.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
 <img src="assets/RStudio_paneles.png" alt="Interfase principal de **RStudio**" width="90%"  />
@@ -2127,13 +2130,33 @@ Figure 1: Interfase principal de <strong>RStudio</strong>
 </div>
 </div>
 <ol type="1">
-<li><p><strong>Editor</strong>. Es donde se editan los <em>scripts</em> que son archivos de texto plano con los comandos para ejecutar en <strong>R</strong>. Este panel no aparece a menos que se cree un nuevo script o se abra uno previamente guardado.</p></li>
-<li><p><strong>Console</strong> (consola). Es donde vive <strong>R</strong> propiamente dicho. Allí se ejecutan los comandos y se obtienen las salidas de <strong>R</strong>.</p></li>
-<li><p><strong>Environmnet/History/Connections</strong>. En la primera pestaña se visualizan los objetos (variables, funciones o datos cargados) que están disponibles en el entorno de <strong>R</strong>, i.e. en la memoria. En la segunda se puede ver el historial de comandos ingresados o enviados a la consola. La tercera pestaña visualiza las conexiones establecidas con diferentes base de datos.</p></li>
-<li><p><strong>Files/Plots/Packages/Help/Viewer</strong>. Allí se puede manejar los archivos del directorio de trabajo, visualizar los gráficos generados en <strong>R</strong> con posibilidad de exportarlos en varios formatos, administrar los paquetes o complementos, buscar o explorar el manual de ayuda y previsualizar archivos HTML.</p></li>
+<li><p><strong>Editor</strong>. Es donde se editan los <em>scripts</em>
+que son archivos de texto plano con los comandos para ejecutar en
+<strong>R</strong>. Este panel no aparece a menos que se cree un nuevo
+script o se abra uno previamente guardado.</p></li>
+<li><p><strong>Console</strong> (consola). Es donde vive
+<strong>R</strong> propiamente dicho. Allí se ejecutan los comandos y se
+obtienen las salidas de <strong>R</strong>.</p></li>
+<li><p><strong>Environmnet/History/Connections</strong>. En la primera
+pestaña se visualizan los objetos (variables, funciones o datos
+cargados) que están disponibles en el entorno de <strong>R</strong>,
+i.e. en la memoria. En la segunda se puede ver el historial de comandos
+ingresados o enviados a la consola. La tercera pestaña visualiza las
+conexiones establecidas con diferentes base de datos.</p></li>
+<li><p><strong>Files/Plots/Packages/Help/Viewer</strong>. Allí se puede
+manejar los archivos del directorio de trabajo, visualizar los gráficos
+generados en <strong>R</strong> con posibilidad de exportarlos en varios
+formatos, administrar los paquetes o complementos, buscar o explorar el
+manual de ayuda y previsualizar archivos HTML.</p></li>
 </ol>
 <h2 id="la-consola">La consola</h2>
-<p>La línea de comandos o <strong>consola</strong> es el modo interactivo mediante el cual podemos ejecutar comandos directamente en el intérprete de <strong>R</strong>. El símbolo o <em>prompt</em> <code>&gt;</code> indica que <strong>R</strong> está disponible esperando una orden. Si la orden no está completa el símbolo se transforma en <code>+</code>. Por ejemplo: si tipeamos <code>2 + 2</code> y luego <code>ENTER</code>:</p>
+<p>La línea de comandos o <strong>consola</strong> es el modo
+interactivo mediante el cual podemos ejecutar comandos directamente en
+el intérprete de <strong>R</strong>. El símbolo o <em>prompt</em>
+<code>&gt;</code> indica que <strong>R</strong> está disponible
+esperando una orden. Si la orden no está completa el símbolo se
+transforma en <code>+</code>. Por ejemplo: si tipeamos
+<code>2 + 2</code> y luego <code>ENTER</code>:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fl'>2</span> <span class='op'>+</span> <span class='fl'>2</span>
@@ -2141,7 +2164,8 @@ Figure 1: Interfase principal de <strong>RStudio</strong>
 </div>
 <pre><code>[1] 4</code></pre>
 </div>
-<p>Obetenemos inmediatemente el resultado. Otro ejemplo: el promedio de los números <code>1</code>, <code>3</code> y <code>4</code></p>
+<p>Obetenemos inmediatemente el resultado. Otro ejemplo: el promedio de
+los números <code>1</code>, <code>3</code> y <code>4</code></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='op'>(</span><span class='fl'>1</span> <span class='op'>+</span> <span class='fl'>3</span> <span class='op'>+</span> <span class='fl'>4</span><span class='op'>)</span> <span class='op'>/</span> <span class='fl'>3</span>
@@ -2150,14 +2174,21 @@ Figure 1: Interfase principal de <strong>RStudio</strong>
 <pre><code>[1] 2.666667</code></pre>
 </div>
 <h2 id="el-script">El script</h2>
-<p>El <strong>editor de scripts</strong> (panel #1) es un editor de texto plano que está conectado con la consola (panel #2). Tiene algunas funcionalidades que facilitan la edición del código:</p>
+<p>El <strong>editor de scripts</strong> (panel #1) es un editor de
+texto plano que está conectado con la consola (panel #2). Tiene algunas
+funcionalidades que facilitan la edición del código:</p>
 <ul>
-<li>Resaltado sintaxis: mediante colores resalta las funciones, variables, comandos o palabras claves del lenguaje <strong>R</strong></li>
-<li>Sangrado automático: agrega espacios en blanco para mantener la sangría de los bloques de código.</li>
+<li>Resaltado sintaxis: mediante colores resalta las funciones,
+variables, comandos o palabras claves del lenguaje
+<strong>R</strong></li>
+<li>Sangrado automático: agrega espacios en blanco para mantener la
+sangría de los bloques de código.</li>
 <li>Plegado de código: permite colapsar bloques de código</li>
-<li>Completado automático y ayuda en linea: muestra sugerencias para completar el comando o argumentos usando la tecla <code>TAB</code>.</li>
+<li>Completado automático y ayuda en linea: muestra sugerencias para
+completar el comando o argumentos usando la tecla <code>TAB</code>.</li>
 </ul>
-<p>Para crear un nuevo script se puede usar uno de los siguientes métodos:</p>
+<p>Para crear un nuevo script se puede usar uno de los siguientes
+métodos:</p>
 <ul>
 <li>Ir a al menu <code>File &gt; New File &gt; R Script</code></li>
 <li>Usar el atajo de teclado <code>CTRL + SHIFT + N</code></li>
@@ -2171,7 +2202,9 @@ Figure 2: Barra de herramientas de <strong>RStudio</strong>
 </p>
 </div>
 </div>
-<p>Una vez abierto el script en blanco, se pueden empezar a escribir los comandos de <strong>R</strong>. Por ejemplo podemos escribir lo siguiente:</p>
+<p>Una vez abierto el script en blanco, se pueden empezar a escribir los
+comandos de <strong>R</strong>. Por ejemplo podemos escribir lo
+siguiente:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='st'>"Hola Mundo!"</span> <span class='co'># Clásico mensaje "Hola mundo!"</span>
@@ -2181,11 +2214,17 @@ Figure 2: Barra de herramientas de <strong>RStudio</strong>
 </code></pre>
 </div>
 </div>
-<p>Estos comandos no se van a ejecutar automáticamente ya que solo los hemos escritor en el script. Para ejecutar estos comandos en la consola hay que posicionar le cursor en la linea deseada o bien seleccionar si queremos ejecutar varias a la vez y luego enviarlo a la consoloa con una de las siguientes opciones:</p>
+<p>Estos comandos no se van a ejecutar automáticamente ya que solo los
+hemos escritor en el script. Para ejecutar estos comandos en la consola
+hay que posicionar le cursor en la linea deseada o bien seleccionar si
+queremos ejecutar varias a la vez y luego enviarlo a la consoloa con una
+de las siguientes opciones:</p>
 <ul>
 <li>Ir al menu <code>Code &gt; Run Selected Line(s)</code></li>
-<li>Usar el atajo de teclado <code>CTRL + ENTER</code> o <code>CTRL + R</code></li>
-<li>Usar el ícono <code>Run</code> de la barra de herramientas de la pestaña del script</li>
+<li>Usar el atajo de teclado <code>CTRL + ENTER</code> o
+<code>CTRL + R</code></li>
+<li>Usar el ícono <code>Run</code> de la barra de herramientas de la
+pestaña del script</li>
 </ul>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
@@ -2195,14 +2234,27 @@ Figure 3: Barra de herramientas del panel Editor
 </p>
 </div>
 </div>
-<p>El simbolo <code>#</code> indica que lo que sigue es un <strong>comentario</strong> y por lo tanto <strong>R</strong> lo ignora cuando es enviado a la consola. Los comentarios pueden ir solos en una línea separada o bien dentro de una línea que tenga algún comando. Si bien no son necesarios para correr el código, los comentarios son muy útiles para estructurar el script y hacer anotaciones para que otros, o nosotros en un futuro, entiendan lo que hace esa parte del script.</p>
+<p>El simbolo <code>#</code> indica que lo que sigue es un
+<strong>comentario</strong> y por lo tanto <strong>R</strong> lo ignora
+cuando es enviado a la consola. Los comentarios pueden ir solos en una
+línea separada o bien dentro de una línea que tenga algún comando. Si
+bien no son necesarios para correr el código, los comentarios son muy
+útiles para estructurar el script y hacer anotaciones para que otros, o
+nosotros en un futuro, entiendan lo que hace esa parte del script.</p>
 <p>Para guardar el script:</p>
 <ol type="1">
-<li><p>Ir al menu <code>File &gt; Save</code> o usar el atajo de teclado <code>CTRL + S</code> o bien el ícono con el diskette de la barra de herramientas global o de la pestaña del script activo.</p></li>
-<li><p>Elegir la carpeta destino y el nombre de archivo. Automáticamente se agregará la extensión <code>.R</code> que corresponde a los scripts.</p></li>
+<li><p>Ir al menu <code>File &gt; Save</code> o usar el atajo de teclado
+<code>CTRL + S</code> o bien el ícono con el diskette de la barra de
+herramientas global o de la pestaña del script activo.</p></li>
+<li><p>Elegir la carpeta destino y el nombre de archivo. Automáticamente
+se agregará la extensión <code>.R</code> que corresponde a los
+scripts.</p></li>
 </ol>
 <h2 id="ayuda">Ayuda!!!</h2>
-<p>Por último, y no menos importante, <strong>R</strong> y <strong>RStudio</strong> cuentan con un completo sistema de ayuda. Desde la consola se puede acceder usando la función <code>?</code> seguida del nombre de la función o bien <code>help("nombre")</code></p>
+<p>Por último, y no menos importante, <strong>R</strong> y
+<strong>RStudio</strong> cuentan con un completo sistema de ayuda. Desde
+la consola se puede acceder usando la función <code>?</code> seguida del
+nombre de la función o bien <code>help("nombre")</code></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Pedir ayuda de la función mean</span>
@@ -2211,8 +2263,13 @@ Figure 3: Barra de herramientas del panel Editor
 </code></pre>
 </div>
 </div>
-<p>Una de las ventajas de <strong>RStudio</strong> es que dispone de un panel (Panel #4) dedicado a visualizar las páginas de ayuda. Allí se puede navegar por las páginas utilizando los links, realizar búsquedas, etc. Leer la documentación nunca viene mal y generalmente ahorra dolores de cabeza.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Una de las ventajas de <strong>RStudio</strong> es que dispone de un
+panel (Panel #4) dedicado a visualizar las páginas de ayuda. Allí se
+puede navegar por las páginas utilizando los links, realizar búsquedas,
+etc. Leer la documentación nunca viene mal y generalmente ahorra dolores
+de cabeza.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2228,7 +2285,9 @@ Figure 3: Barra de herramientas del panel Editor
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <div class="distill-site-nav distill-site-footer">
-<p>Material preparado por <a href="https://github.com/Estadistica-FCA">Cátedra de Estadística FCA-UNL</a></p>
+<p>Material preparado por <a
+href="https://github.com/Estadistica-FCA">Cátedra de Estadística
+FCA-UNL</a></p>
 <p style="text-align: center;">
   <center>
     <img src="assets/logo_FCA_inv.png" style="height:50px;"/>
