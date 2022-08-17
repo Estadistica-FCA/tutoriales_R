@@ -1,6 +1,6 @@
 ---
 title: "Tutoriales de R"
-site: distill::distill_website
+site: 
 ---
 
 ```{r, echo = F, message=F}
