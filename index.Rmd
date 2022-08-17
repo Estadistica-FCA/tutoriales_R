@@ -1,6 +1,6 @@
 ---
 title: "Tutoriales de R"
-site: 
+site: bookdown::gitbook
 ---
 
 ```{r, echo = F, message=F}
