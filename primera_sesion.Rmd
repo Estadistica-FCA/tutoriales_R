@@ -6,6 +6,8 @@ title: "Primera sesion en R y RStudio"
 library(knitr)
 ```
 
+# Primera sesion en R y RStudio {#primera_sesion}
+
 El entorno de trabajo de **RStudio** se divide en cuatro paneles. La disposición y contenido de los 4 paneles se puede personalizar yendo a `View > Panes > Panes Layout...`.
 A continuación la descripción de los paneles por defecto. 
 

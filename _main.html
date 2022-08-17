@@ -107,7 +107,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site"]}},"value":[{"type":"character","attributes":{},"value":["Tutoriales de R"]},{"type":"character","attributes":{},"value":["bookdown::gitbook"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","documentclass","link-citations"]}},"value":[{"type":"character","attributes":{},"value":["Tutoriales de R"]},{"type":"character","attributes":{},"value":["bookdown::bookdown_site"]},{"type":"character","attributes":{},"value":["book"]},{"type":"logical","attributes":{},"value":[true]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -4721,7 +4721,7 @@ Contenidos
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Tutoriales de R</h1>
+<h1>Acerca de…</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -4729,9 +4729,98 @@ Contenidos
 
 
 <div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#tutorial-de-r" id="toc-tutorial-de-r">Tutorial de
+R</a></li>
+<li><a href="#about" id="toc-about">About</a>
+<ul>
+<li><a href="#agustín-alesso" id="toc-agustín-alesso">Agustín
+Alesso</a></li>
+<li><a href="#patricia-acetta" id="toc-patricia-acetta">Patricia
+Acetta</a></li>
+</ul></li>
+<li><a href="#como_crear_proyecto_rstudio" id="toc-como_crear_proyecto_rstudio">¿Cómo crear proyecto RStudio?</a>
+<ul>
+<li><a href="#qué-es-un-proyecto" id="toc-qué-es-un-proyecto">¿Qué es un
+Proyecto?</a></li>
+<li><a href="#cómo-crear-un-proyecto" id="toc-cómo-crear-un-proyecto">¿Cómo crear un proyecto?</a></li>
+</ul></li>
+<li><a href="#como_importar_datos_en_R" id="toc-como_importar_datos_en_R">¿Cómo importar datos en R?</a>
+<ul>
+<li><a href="#desde-la-consola-recomendado" id="toc-desde-la-consola-recomendado">Desde la consola
+(recomendado)</a></li>
+<li><a href="#desde-el-importador-de-datos-de-rstudio" id="toc-desde-el-importador-de-datos-de-rstudio">Desde el importador de
+datos de <strong>RStudio</strong></a></li>
+<li><a href="#verificación-de-los-datos" id="toc-verificación-de-los-datos">Verificación de los datos</a></li>
+</ul></li>
+<li><a href="#como_instalar_R_Rstudio" id="toc-como_instalar_R_Rstudio">¿Cómo instalar R y RStudio?</a>
+<ul>
+<li><a href="#instalación-de-r" id="toc-instalación-de-r">Instalación de
+<strong>R</strong></a></li>
+<li><a href="#instalación-de-rstudio" id="toc-instalación-de-rstudio">Instalación de
+<strong>RStudio</strong></a></li>
+</ul></li>
+<li><a href="#como_instalar_y_cargar_paquetes" id="toc-como_instalar_y_cargar_paquetes">¿Cómo instalar y cargar
+paquetes en R?</a>
+<ul>
+<li><a href="#alternativa-1-install.packageslibrary" id="toc-alternativa-1-install.packageslibrary">Alternativa 1:
+<code>install.packages()/library()</code></a></li>
+<li><a href="#alternativa-2-pacman" id="toc-alternativa-2-pacman">Alternativa 2:
+<code>pacman</code></a></li>
+<li><a href="#alternativa-3-panel-packages-de-rstudio" id="toc-alternativa-3-panel-packages-de-rstudio">Alternativa 3: Panel
+Packages de RStudio</a></li>
+<li><a href="#library-pacman-o-panel-packages" id="toc-library-pacman-o-panel-packages">¿<code>library()</code>,
+<code>pacman</code> o panel <code>Packages</code>?</a></li>
+</ul></li>
+<li><a href="#introduccion_a_dplyr" id="toc-introduccion_a_dplyr">¿Cómo
+manipular datos con <code>dplyr</code>?</a>
+<ul>
+<li><a href="#qué-es-dplyr" id="toc-qué-es-dplyr">¿Qué es
+<code>dplyr</code>?</a></li>
+<li><a href="#cómo-conseguir-dplyr" id="toc-cómo-conseguir-dplyr">¿Cómo
+conseguir <code>dplyr</code>?</a></li>
+<li><a href="#verbos-importantes-de-dplyr-para-recordar" id="toc-verbos-importantes-de-dplyr-para-recordar">Verbos importantes de
+<code>dplyr</code> para recordar</a></li>
+<li><a href="#dplyr-en-acción" id="toc-dplyr-en-acción"><code>dplyr</code> en acción</a></li>
+</ul></li>
+<li><a href="#introduccion_a_ggplot2" id="toc-introduccion_a_ggplot2">¿Cómo visualizar datos con
+<code>ggplot2</code>?</a>
+<ul>
+<li><a href="#cómo-conseguir-ggplot2" id="toc-cómo-conseguir-ggplot2">¿Cómo conseguir
+<code>ggplot2</code>?</a></li>
+<li><a href="#componentes-del-gráfico-en-ggplot2" id="toc-componentes-del-gráfico-en-ggplot2">Componentes del gráfico en
+<code>ggplot2</code></a></li>
+<li><a href="#primer-gráfico-paso-a-paso" id="toc-primer-gráfico-paso-a-paso">Primer gráfico paso a paso</a></li>
+<li><a href="#gráficos-condicionales-o-por-paneles-facets" id="toc-gráficos-condicionales-o-por-paneles-facets">Gráficos
+condicionales o por paneles: <code>facets</code></a></li>
+<li><a href="#temas-1" id="toc-temas-1">Temas</a></li>
+</ul></li>
+<li><a href="#primera_sesion" id="toc-primera_sesion">Primera sesion en
+R y RStudio</a>
+<ul>
+<li><a href="#la-consola" id="toc-la-consola">La consola</a></li>
+<li><a href="#el-script" id="toc-el-script">El script</a></li>
+<li><a href="#ayuda" id="toc-ayuda">Ayuda!!!</a></li>
+</ul></li>
+<li><a href="#R_basico" id="toc-R_basico">¿Cómo es el lenguaje R?</a>
+<ul>
+<li><a href="#operadores-matemáticos-y-lógicos" id="toc-operadores-matemáticos-y-lógicos">Operadores matemáticos y
+lógicos</a></li>
+<li><a href="#variables-y-objetos" id="toc-variables-y-objetos">Variables y objetos</a></li>
+<li><a href="#tipos-de-datos" id="toc-tipos-de-datos">Tipos de
+datos</a></li>
+<li><a href="#estructura-de-datos" id="toc-estructura-de-datos">Estructura de datos</a></li>
+</ul></li>
+</ul>
+</nav>
+</div>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
+<h1 class="unnumbered" id="tutorial-de-r">Tutorial de R</h1>
 <p><strong>R</strong> es un lenguaje y entorno para el procesamiento,
 visualización y análisis estadístico de datos. Fue creado en 1993 por R.
 Gentleman y R. Ihaka, ambos científicos del Departamento de Estadística
@@ -4754,6 +4843,119 @@ aprendizaje</a> lenta. Con el objetivo de acelerar el aprendizaje se ha
 diseñado este sitio web con orientado a estudiantes de Estadísica 1 y 2
 de la carrera de Ingenieria Agronómica de la Facultad de Ciencias
 Agrarias (Universidad Nacional del Litoral).</p>
+<!--chapter:end:index.Rmd-->
+<p>Este sitio fue preparado por el equipo de Estadística de la FCA.</p>
+<h1 id="about">About</h1>
+<h2 id="agustín-alesso">Agustín Alesso</h2>
+<p>Ingeniero Agrónomo (UNL) Dr. en Ciencias Agropecuarias (UNC)
+`fontawesome::fa(“email”) <a href="mailto:calesso@fca.unl.edu.ar" class="email">calesso@fca.unl.edu.ar</a></p>
+<p>Profesor Adjunto de la UNL. Orienta su investigación en métodos
+estadísticos y geoestadísticos aplicados a agricultura de precisión, y
+trabaja en temas relacionados con el análisis de la variabilidad
+espacial y temporal de rendimientos de cultivos y atributos de suelo y
+delimitación de zonas de manejo.</p>
+<h2 id="patricia-acetta">Patricia Acetta</h2>
+<p>Ingeniera Agrónoma (UNL) Mg. en Negocios Agroalimentarios (UNL) <a href="mailto:pacetta@fca.unl.edu.ar" class="email">pacetta@fca.unl.edu.ar</a></p>
+<p>Ayudante de cátedra en grado, pregrado y posgrado de la UNL. Orienta
+su investigación en economía de la producción agropecuaria, análisis de
+datos de gestión económica y financiera y cambios tecnológicos de
+empresas agropecuarias, de tendencias de precios, en el impacto en la
+toma de decisiones en los agronegocios; formulación y evaluación de
+proyectos de desarrollo rural, con énfasis en alternativas no
+tradicionales.</p>
+<!--chapter:end:about.Rmd-->
+<h1 id="como_crear_proyecto_rstudio">¿Cómo crear proyecto RStudio?</h1>
+<p>Placeholder</p>
+<h2 id="qué-es-un-proyecto">¿Qué es un Proyecto?</h2>
+<h2 id="cómo-crear-un-proyecto">¿Cómo crear un proyecto?</h2>
+<!--chapter:end:como_crear_proyecto_rstudio.Rmd-->
+<h1 id="como_importar_datos_en_R">¿Cómo importar datos en R?</h1>
+<p>Placeholder</p>
+<h2 id="desde-la-consola-recomendado">Desde la consola
+(recomendado)</h2>
+<h2 id="desde-el-importador-de-datos-de-rstudio">Desde el importador de
+datos de <strong>RStudio</strong></h2>
+<h2 id="verificación-de-los-datos">Verificación de los datos</h2>
+<!--chapter:end:como_importar_datos_en_R.Rmd-->
+<h1 id="como_instalar_R_Rstudio">¿Cómo instalar R y RStudio?</h1>
+<p>Placeholder</p>
+<h2 id="instalación-de-r">Instalación de <strong>R</strong></h2>
+<h2 id="instalación-de-rstudio">Instalación de
+<strong>RStudio</strong></h2>
+<!--chapter:end:como_instalar_R_Rstudio.Rmd-->
+<h1 id="como_instalar_y_cargar_paquetes">¿Cómo instalar y cargar
+paquetes en R?</h1>
+<p>Placeholder</p>
+<h2 id="alternativa-1-install.packageslibrary">Alternativa 1:
+<code>install.packages()/library()</code></h2>
+<h2 id="alternativa-2-pacman">Alternativa 2: <code>pacman</code></h2>
+<h2 id="alternativa-3-panel-packages-de-rstudio">Alternativa 3: Panel
+Packages de RStudio</h2>
+<h2 id="library-pacman-o-panel-packages">¿<code>library()</code>,
+<code>pacman</code> o panel <code>Packages</code>?</h2>
+<!--chapter:end:como_instalar_y_cargar_paquetes.Rmd-->
+<h1 id="introduccion_a_dplyr">¿Cómo manipular datos con
+<code>dplyr</code>?</h1>
+<p>Placeholder</p>
+<h2 id="qué-es-dplyr">¿Qué es <code>dplyr</code>?</h2>
+<h2 id="cómo-conseguir-dplyr">¿Cómo conseguir <code>dplyr</code>?</h2>
+<h2 id="verbos-importantes-de-dplyr-para-recordar">Verbos importantes de
+<code>dplyr</code> para recordar</h2>
+<h2 id="dplyr-en-acción"><code>dplyr</code> en acción</h2>
+<h3 id="seleccionando-variables">Seleccionando variables</h3>
+<h3 id="seleccionando-observaciones">Seleccionando observaciones</h3>
+<h3 id="encadenando-operaciones-operador">Encadenando operaciones
+(operador <code>%&gt;%</code>)</h3>
+<h3 id="ordenar-las-filas">Ordenar las filas</h3>
+<h3 id="crear-o-transformar-columnas">Crear o transformar columnas</h3>
+<h3 id="resmuir-datos">Resmuir datos</h3>
+<h3 id="agrupar-último-pero-no-menos-importante">Agrupar (último pero no
+menos importante)</h3>
+<h3 id="muestrear">Muestrear</h3>
+<!--chapter:end:introduccion_a_dplyr.Rmd-->
+<h1 id="introduccion_a_ggplot2">¿Cómo visualizar datos con
+<code>ggplot2</code>?</h1>
+<p>Placeholder</p>
+<h2 id="cómo-conseguir-ggplot2">¿Cómo conseguir
+<code>ggplot2</code>?</h2>
+<h2 id="componentes-del-gráfico-en-ggplot2">Componentes del gráfico en
+<code>ggplot2</code></h2>
+<h3 id="layers">Layers</h3>
+<h3 id="scales">Scales</h3>
+<h3 id="coordenadas">Coordenadas</h3>
+<h3 id="paneles-facets">Paneles (<code>facets</code>)</h3>
+<h3 id="temas">Temas</h3>
+<h2 id="primer-gráfico-paso-a-paso">Primer gráfico paso a paso</h2>
+<h2 id="gráficos-condicionales-o-por-paneles-facets">Gráficos
+condicionales o por paneles: <code>facets</code></h2>
+<h2 id="temas-1">Temas</h2>
+<!--chapter:end:introduccion_a_ggplot2.Rmd-->
+<h1 id="primera_sesion">Primera sesion en R y RStudio</h1>
+<p>Placeholder</p>
+<h2 id="la-consola">La consola</h2>
+<h2 id="el-script">El script</h2>
+<h2 id="ayuda">Ayuda!!!</h2>
+<!--chapter:end:primera_sesion.Rmd-->
+<h1 id="R_basico">¿Cómo es el lenguaje R?</h1>
+<p>Placeholder</p>
+<h2 id="operadores-matemáticos-y-lógicos">Operadores matemáticos y
+lógicos</h2>
+<h2 id="variables-y-objetos">Variables y objetos</h2>
+<h3 id="vectores">Vectores</h3>
+<h3 id="funciones-y-argumentos">Funciones y argumentos</h3>
+<h2 id="tipos-de-datos">Tipos de datos</h2>
+<h3 id="numéricos-numeric">Numéricos (<code>numeric</code>)</h3>
+<h3 id="texto-character">Texto (<code>character</code>)</h3>
+<h3 id="lógicos-logic">Lógicos (<code>logic</code>)</h3>
+<h3 id="otros-tipos-de-datos">Otros tipos de datos</h3>
+<h2 id="estructura-de-datos">Estructura de datos</h2>
+<h3 id="matriz-matrix">Matriz (<code>matrix</code>)</h3>
+<h3 id="listas-list">Listas (<code>list</code>)</h3>
+<h3 id="hoja-de-datos-data.frame">Hoja de datos
+(<code>data.frame</code>)</h3>
+<h3 id="factores-factor-y-ordered">Factores (<code>factor</code> y
+<code>ordered</code>)</h3>
+<!--chapter:end:R_basico.Rmd-->
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

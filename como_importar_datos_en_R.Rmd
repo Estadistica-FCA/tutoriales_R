@@ -2,6 +2,8 @@
 title: "¿Cómo importar datos en R?"
 ---
 
+# ¿Cómo importar datos en R? {#como_importar_datos_en_R}
+
 Un aspecto importante para cualquier análisis de datos es acceder a los datos!! Éstos pueden estar almacenados en diversos formatos: archivos de texto (`*.txt`, `*.dat`, etc), texto separado por comas (`*.csv`), planillas de cálculos (`*.xls` o `*.xlsx`), etc. 
 
 Existen diversas funciones que vienen por defecto en **R** o bien en paquetes específicos que permiten leer virtualmente cualquier formato de archivos. El paquete `rio` brinda una interfase unificada y simplificada para realizar esta tarea desde la consola. Otra alternativa es el modulo `Import dataset` de **RStudio**.
@@ -38,6 +40,7 @@ urbana2
 En el menú `File > Import Dataset` o bien el ícono del panel `Environment` despliega una lista con disitintas opciones de importación: nos interesa `From Excel (readxl)...` 
 
 ```{r, echo = F, out.width = "75%", fig.align = 'center', fig.pos= 'h', out.extra='', fig.cap="Importador de datos"}
+library(knitr)
 include_graphics("assets/import_dataset.png", auto_pdf = T)
 ```
 

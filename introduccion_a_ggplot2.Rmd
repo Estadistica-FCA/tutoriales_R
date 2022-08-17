@@ -2,6 +2,8 @@
 title: "¿Cómo visualizar datos con `ggplot2`?"
 ---
 
+# ¿Cómo visualizar datos con `ggplot2`? {#introduccion_a_ggplot2}
+
 **R** tiene por defecto el paquete `graphics`, también conocido como _base plot system_, que provee la función genérica `plot()` para hacer gráficos simples, y otras funciones para gráficos específicos (`hist()`, `barplot()`, `boxplot()`, etc). 
 
 Usa un enfoque de _papel y lapiz_ por capas donde el gráfico final es una sumatoria de capas que se agregan una a la vez sin posibilidad de modificarse luego. Generalmente es OK para gráficos simples o exploratorios. Para gráficos más complejos (con subgrupos o multipanel) requiere programar más. Una desventaja es la sintaxis poco consistente. 

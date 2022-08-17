@@ -2,6 +2,8 @@
 title: "¿Cómo manipular datos con `dplyr`?"
 ---
 
+# ¿Cómo manipular datos con `dplyr`? {#introduccion_a_dplyr}
+
 ## ¿Qué es `dplyr`? 
 
 `dplyr` es un paquete de **R** muy potente para la exploración, transformación y resumen de datos en formato de tabla con filas (observaciones) y columnas (variables). Es un componente de un conjunto de packages llamado `tidyverse` desarrollados por [Hadley Wickham](http://hadley.nz/)  

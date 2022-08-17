@@ -1,8 +1,11 @@
 ---
 title: "Tutoriales de R"
-site: bookdown::gitbook
----
+site: bookdown::bookdown_site
 
+documentclass: book
+
+link-citations: yes
+---
 ```{r, echo = F, message=F}
 library(knitr)
 opts_chunk$set(fig.align = "center")
@@ -22,7 +25,9 @@ knit_hooks$set(output = function(x, options) {
 })
 ```
 
+`r if (knitr::is_latex_output()) '<!--'` 
 
+# Tutorial de R {-}
 
 **R** es un lenguaje y entorno para el procesamiento, visualización y análisis estadístico de datos. Fue creado en 1993 por R. Gentleman y R. Ihaka, ambos científicos del Departamento de Estadística de la Universidad de Auckland (Nueva Zelanda). Actualmente su desarrollo y mantenimiento está a cargo del _R Core Team_. El sitio oficial del proyecto es [www.r-project.org](www.r-project.org)
 
@@ -35,3 +40,4 @@ La flexibilidad y potencia de **R** se basa en su interfaz de comandos (CLI, del
 
 Esta característica impone una [curva de aprendizaje](https://es.wikipedia.org/wiki/Curva_de_aprendizaje) lenta. Con el objetivo de acelerar el aprendizaje se ha diseñado este sitio web con orientado a estudiantes de Estadísica 1 y 2 de la carrera de Ingenieria Agronómica de la Facultad de Ciencias Agrarias (Universidad Nacional del Litoral).
 
+`r if (knitr::is_latex_output()) '-->'`

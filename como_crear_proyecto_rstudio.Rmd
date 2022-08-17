@@ -6,7 +6,9 @@ title: "¿Cómo crear un proyecto en RStudio?"
 library(knitr)
 ```
 
-## ¿Qué es un Proyecto?
+# ¿Cómo crear proyecto RStudio? {#como_crear_proyecto_rstudio}
+
+## ¿Qué es un Proyecto? 
 
 **R** trabaja con un directorio de trabajo o _working directory_ que es la dirección o _path_ que figura en el titulo del panel **Console**. Esto se puede averiguar con `getwd()`
 
@@ -26,7 +28,7 @@ setwd("ruta/a/otra/carpeta")
 
 Al abrir un proyecto, automáticamente se cambia el directorio de trabajo a esta carpeta. Esto permite organizar los archivos de datos, las salidas, los scripts, etc., dentro de un directorio de trabajo (_working directory_) y volver a ellos de manera más rápida, eficiente, y portable.
 
-## ¿Cómo crar un proyecto?
+## ¿Cómo crear un proyecto?
 
 Para crear un proyecto en **RStudio**: 
 

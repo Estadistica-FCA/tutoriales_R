@@ -2,11 +2,13 @@
 title: "¿Cómo instalar y cargar paquetes en R?"
 ---
 
+# ¿Cómo instalar y cargar paquetes en R? {#como_instalar_y_cargar_paquetes}
+
 **R** es modular ya que consta de un núcleo básico de programas para realizar operaciones, gráficos y análisis. Estos programas vienen incluidos en el paquete de instalación. No obstante, existe un repositorio denominado CRAN (_Comprehensive R Archive Network_) donde constantemente se van agregando nuevos paquetes para expandir las funcionalidades de **R**.
 
 > **IMPORTANTE** Para poder acceder a estos paquetes extra, primero es necesario instalarlos en nuestro sistema y luego, cuando los necesitemos, cargarlo en la sesión de trabajo.
 
-Para esto tenemos 3 alternativoas:
+Para esto tenemos 3 alternativas:
 
 1. Funciones `install.packages()/library()`
 2. Paquete `pacman` (recomendada)

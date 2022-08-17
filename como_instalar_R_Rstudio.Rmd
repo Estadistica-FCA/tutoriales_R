@@ -6,6 +6,7 @@ title: "¿Cómo instalar R y RStudio?"
 library(knitr)
 ```
 
+# ¿Cómo instalar R y RStudio? {#como_instalar_R_Rstudio}
 
 **R** y **RStudio** se instalan por separado. **R** puede funcionar sin **RStudio**, en cambio **RStudio** necesita que al menos una versión de **R** esté instalada en el sistema. Ambos softwares son multiplataforma y pueden ser ejecutados en sistemas operativos Windows, Mac OS X  y Linux. 
 
