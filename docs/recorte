@@ -1,0 +1,10 @@
+
+```{r, echo = F, fig.cap = 'Página oficial de R Project', out.width = '75%' , out.extra=''} 
+#webshot::webshot('http://www.r-project.org', file = "./assets/rproject.png")
+include_graphics('assets/rproject.png', auto_pdf = T)
+```
+
+
+```{r, echo = F, fig.cap = 'Ejemplo de consola o terminal de Linux y Windows corriendo la última versión estable de **R**', out.width = '75%', out.extra=''} 
+include_graphics('assets/consola_linux.png', auto_pdf = T)
+```
