@@ -1,6 +1,11 @@
 ---
 title: "Tutoriales de R"
 site: distill::distill_website
+output: 
+  distill::distill_article:
+    toc: true
+    number_sections: true
+    toc_depth: 4
 ---
 
 ```{r, echo = F, message=F}
@@ -37,14 +42,14 @@ Esta característica impone una [curva de aprendizaje](https://es.wikipedia.org/
 
 # Contenidos
 
-- [¿Cómo instalar R y RStudio?](https://estadistica-fca.github.io/tutoriales_R/como_instalar_R_Rstudio.html)
-- [¿Cómo se usa RStudio?](https://estadistica-fca.github.io/tutoriales_R/primera_sesion.html)
-- [¿Cómo es el lenguaje R?](https://estadistica-fca.github.io/tutoriales_R/R_basico.html)
-- [¿Cómo crear un proyecto en RStudio?](https://estadistica-fca.github.io/tutoriales_R/como_crear_proyecto_rstudio.html)
-- [¿Cómo instalar y cargar paquetes en R?](https://estadistica-fca.github.io/tutoriales_R/como_instalar_y_cargar_paquetes.html)
-- [¿Cómo importar datos en R?](https://estadistica-fca.github.io/tutoriales_R/como_importar_datos_en_R.html)
-- [¿Cómo manipular datos con `dplyr`?](https://estadistica-fca.github.io/tutoriales_R/introduccion_a_dplyr.html)
-- [¿Cómo visualizar datos con `ggplot2`?](https://estadistica-fca.github.io/tutoriales_R/introduccion_a_ggplot2.html)
+### [¿Cómo instalar R y RStudio?](https://estadistica-fca.github.io/tutoriales_R/como_instalar_R_Rstudio.html)
+### [¿Cómo se usa RStudio?](https://estadistica-fca.github.io/tutoriales_R/primera_sesion.html)
+### [¿Cómo es el lenguaje R?](https://estadistica-fca.github.io/tutoriales_R/R_basico.html)
+### [¿Cómo crear un proyecto en RStudio?](https://estadistica-fca.github.io/tutoriales_R/como_crear_proyecto_rstudio.html)
+### [¿Cómo instalar y cargar paquetes en R?](https://estadistica-fca.github.io/tutoriales_R/como_instalar_y_cargar_paquetes.html)
+### [¿Cómo importar datos en R?](https://estadistica-fca.github.io/tutoriales_R/como_importar_datos_en_R.html)
+### [¿Cómo manipular datos con `dplyr`?](https://estadistica-fca.github.io/tutoriales_R/introduccion_a_dplyr.html)
+### [¿Cómo visualizar datos con `ggplot2`?](https://estadistica-fca.github.io/tutoriales_R/introduccion_a_ggplot2.html)
 
 
 
