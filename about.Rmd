@@ -24,4 +24,4 @@ Ingeniera Agrónoma (UNL)
 Mg. en Negocios Agroalimentarios (UNL)
 `fontawesome::fa("email") pacetta@fca.unl.edu.ar
 
-Ayudante de cátedra en grado, pregrado y posgrado de la UNL. Orienta su investigación en economía de la producción agropecuaria, análisis de datos de gestión económica y financiera y cambios tecnológicos de empresas agropecuarias, así como su impacto en la toma de decisiones en los agronegocios; formulación y evaluación de proyectos de desarrollo rural. Diplomada en AgroAlnalytics (Univ. Austral). Especializada en Bioeconomía como nuevo pradigma de desarrollo productivo (IICA)
+Ayudante de cátedra en grado, pregrado y posgrado de la UNL. Orienta su investigación en economía de la producción agropecuaria, análisis de datos de gestión económica y financiera y cambios tecnológicos de empresas agropecuarias, así como su impacto en la toma de decisiones en los agronegocios; formulación y evaluación de proyectos de desarrollo rural. Diplomada en AgroAnalytics (Univ. Austral). Especializada en Bioeconomía como nuevo pradigma de desarrollo productivo (IICA)
