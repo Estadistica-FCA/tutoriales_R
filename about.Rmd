@@ -22,6 +22,6 @@ Profesor Adjunto de la UNL. Orienta su investigación en métodos estadísticos 
 
 Ingeniera Agrónoma (UNL)
 Mg. en Negocios Agroalimentarios (UNL)
-pacetta@fca.unl.edu.ar
+`fontawesome::fa("email") pacetta@fca.unl.edu.ar
 
-Ayudante de cátedra en grado, pregrado y posgrado de la UNL. Orienta su investigación en economía de la producción agropecuaria, análisis de datos de gestión económica y financiera y cambios tecnológicos de empresas agropecuarias, de tendencias de precios, en el impacto en la toma de decisiones en los agronegocios; formulación y evaluación de proyectos de desarrollo rural, con énfasis en alternativas no tradicionales.
+Ayudante de cátedra en grado, pregrado y posgrado de la UNL. Orienta su investigación en economía de la producción agropecuaria, análisis de datos de gestión económica y financiera y cambios tecnológicos de empresas agropecuarias, así como su impacto en la toma de decisiones en los agronegocios; formulación y evaluación de proyectos de desarrollo rural. Diplomada en AgroAlnalytics (Univ. Austral). Especializada en Bioeconomía como nuevo pradigma de desarrollo productivo (IICA)
