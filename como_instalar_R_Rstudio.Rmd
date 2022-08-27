@@ -46,9 +46,7 @@ include_graphics('assets/rgui.png', auto_pdf = T)
 
 ## Instalación de **RStudio**
 
-1) Descargar el archivo de instalación correspondiente a nuestra plataforma o sistema operativo. Al momento de escribir estas instrucciones la última versión estable de **RStudio** era `RStudio-2022.02.0-443.exe` que se encuentra en este [link](https://download1.rstudio.org/desktop/windows/RStudio-2022.02.0-443.exe)
-
-   En el caso que haya una nueva versión, ir al sitio web de descarga de **RStudio** [https://www.rstudio.com/products/rstudio/download/](https://www.rstudio.com/products/rstudio/download/)
+1) Descargar el archivo de instalación correspondiente a nuestra plataforma o sistema operativo. Ir al sitio web de descarga de **RStudio** [https://www.rstudio.com/products/rstudio/download/#download](https://www.rstudio.com/products/rstudio/download/#download)
 
 ```{r, echo = F, out.width = "75%", fig.cap = 'Página de descarga de **RStudio**',  out.extra=''}
 # webshot::webshot(
