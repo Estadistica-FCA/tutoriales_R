@@ -29,8 +29,6 @@ knit_hooks$set(output = function(x, options) {
 
 # Tutorial de R {-}
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Tutoriales de R</span> por <a xmlns:cc="http://creativecommons.org/ns#" href="https://estadistica-fca.github.io/tutoriales_R/" property="cc:attributionName" rel="cc:attributionURL">ALESSO, CARLOS AGUSTIN & ACETTA PATRICIA</a> se distribuye bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Licencia Creative Commons Atribución-NoComercial-SinDerivadas 4.0 Internacional</a>.
-
 **R** es un lenguaje y entorno para el procesamiento, visualización y análisis estadístico de datos. Fue creado en 1993 por R. Gentleman y R. Ihaka, ambos científicos del Departamento de Estadística de la Universidad de Auckland (Nueva Zelanda). Actualmente su desarrollo y mantenimiento está a cargo del _R Core Team_. El sitio oficial del proyecto es [www.r-project.org](www.r-project.org)
 
 
