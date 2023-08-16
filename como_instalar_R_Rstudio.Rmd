@@ -11,7 +11,7 @@ library(knitr)
 
 En la páginas [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/) hay instrucciones específicas para cada plataforma R y Rstudio. 
 
-```{r, echo = F, fig.cap = 'Página de descaga de **R**', out.width = '75%', out.extra=''} 
+```{r, echo = F, fig.cap = 'Página de descaga de **R y RStudio en _posit_**', out.width = '75%', out.extra=''} 
 #webshot::webshot('https://cloud.r-project.org/', file = 'assets/CRAN_choose_OS.png')
 include_graphics('assets/posit.png', auto_pdf = T)
 ```
@@ -20,7 +20,7 @@ A continuación se describe el procedimiento para instalar **R** y **RStudio** b
 
 ## Instalación de **R**
 
-```{r, echo = F, fig.cap = 'Página de descaga de **R**', out.width = '75%', out.extra=''} 
+```{r, echo = F, fig.cap = 'Botón para descaga de **R**', out.width = '75%', out.extra=''} 
 #webshot::webshot('https://cloud.r-project.org/', file = 'assets/CRAN_choose_OS.png')
 include_graphics('assets/R.png', auto_pdf = T)
 ```
@@ -33,21 +33,26 @@ include_graphics('assets/R.png', auto_pdf = T)
 include_graphics('assets/CRAN_choose_OS.png', auto_pdf = T)
 ```
 
+```{r, echo = F, fig.cap = 'Dirigirse a Install R for firt time', out.width = '75%', out.extra=''} 
+#webshot::webshot('https://cloud.r-project.org/', file = 'assets/CRAN_choose_OS.png')
+include_graphics('assets/install first time.PNG', auto_pdf = T)
+```
+
+```{r, echo = F, fig.cap = 'Dirigire a "Download R-X.X.X for Windows"', out.width = '75%', out.extra=''} 
+#webshot::webshot('https://cloud.r-project.org/', file = 'assets/CRAN_choose_OS.png')
+include_graphics('assets/download R.PNG', auto_pdf = T)
+```
+
 [^1]: CRAN es un conjunto de servidores espejo distribuidos alrededor del mundo que tienen copias de **R** y sus paquetes. No es necesario escojer el espejo más cercano ya que el espejo nube (https://cloud.r-project.org) automáticamente determina de que servidor conviene realizar la descarga.
 
-2) Ejecutar el archivo descargado [^2] y seguir el asistente de instalación con todas las opciones por defecto. 
+2) Ejecutar el archivo descargado y seguir el asistente de instalación con todas las opciones por defecto. 
 
-[^2]: Al momento de escribir estas instrucciones la última versión estable de **R** era la 4.1.1 "Kick Things", por lo tanto el link apuntará al archivo `R-4.1.3-win.exe`. 
 
-3) Si la instalación ha sido exitosa en el menú _Inicio_ podrá encontrarse la carpeta _R_ que contendrá dos accesos directos a la interfase de usuario mínima que viene con la versión de **R** para Windows.
-
-```{r, echo = F, fig.cap = 'R GUI para Windows', out.width = '75%', out.extra=''} 
-include_graphics('assets/rgui.png', auto_pdf = T)
-```
+3) Si la instalación ha sido exitosa en el menú _Inicio_ podrá encontrarse la carpeta _R_ que contendrá dos accesos directos a la interfase de usuario mínima que viene con la versión de **R** para Windows (no abriremos este acceso directo).
 
 ## Instalación de **RStudio**
 
-```{r, echo = F, fig.cap = 'Página de descaga de **R**', out.width = '75%', out.extra=''} 
+```{r, echo = F, fig.cap = 'Botón para descaga de **RStudio**', out.width = '75%', out.extra=''} 
 #webshot::webshot('https://cloud.r-project.org/', file = 'assets/CRAN_choose_OS.png')
 include_graphics('assets/rstudio.png', auto_pdf = T)
 ```
@@ -58,5 +63,12 @@ include_graphics('assets/rstudio.png', auto_pdf = T)
 
 3) Si la instalación ha sido exitosa en el menú _Inicio_ dentro de la carpeta _RStudio_  se encontrará el acceso directo a **RStudio** el cual, mediante el menu contextual (botón derecho del ratón) puede enviarse al Escritorio como acceso directo o bien anclar al menu de Inicio o barra de acceso rápido.
    
+```{r, echo = F, fig.cap = 'Icono de **RStudio**', out.width = '25%', out.extra=''} 
+#webshot::webshot('https://cloud.r-project.org/', file = 'assets/CRAN_choose_OS.png')
+include_graphics('assets/rstudio_icon.png', auto_pdf = T)
+```
+
+<br>
+
 Ahora sí, ya tenemos listo **R** y **RStudio** para empezar a trabajar!!
 

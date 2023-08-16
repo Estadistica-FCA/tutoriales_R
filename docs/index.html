@@ -455,8 +455,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
 
   <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
   <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
   <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -785,6 +785,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1857,15 +1858,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -2064,7 +2071,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.23/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2137,85 +2144,17 @@ Contenidos
 
 
 <div class="d-article">
-<div class="d-contents d-contents-float">
-<nav class="l-text toc figcaption" id="TOC">
-<h3>Contents</h3>
-<ul>
-<li><a href="#contenidos">Contenidos</a>
-<ul>
-<li><a href="#cómo-instalar-r-y-rstudio"><span>¿Cómo instalar R y
-RStudio?</span></a></li>
-<li><a href="#cómo-se-usa-rstudio"><span>¿Cómo se usa
-RStudio?</span></a></li>
-<li><a href="#cómo-es-el-lenguaje-r"><span>¿Cómo es el lenguaje
-R?</span></a></li>
-<li><a href="#cómo-crear-un-proyecto-en-rstudio"><span>¿Cómo crear un
-proyecto en RStudio?</span></a></li>
-<li><a href="#cómo-instalar-y-cargar-paquetes-en-r"><span>¿Cómo instalar
-y cargar paquetes en R?</span></a></li>
-<li><a href="#cómo-importar-datos-en-r"><span>¿Cómo importar datos en
-R?</span></a></li>
-<li><a href="#cómo-manipular-datos-con-dplyr"><span>¿Cómo manipular
-datos con <code>dplyr</code>?</span></a></li>
-<li><a href="#cómo-visualizar-datos-con-ggplot2"><span>¿Cómo visualizar
-datos con <code>ggplot2</code>?</span></a></li>
-</ul></li>
-</ul>
-</nav>
-</div>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<p><strong>R</strong> es un lenguaje y entorno para el procesamiento,
-visualización y análisis estadístico de datos. Fue creado en 1993 por R.
-Gentleman y R. Ihaka, ambos científicos del Departamento de Estadística
-de la Universidad de Auckland (Nueva Zelanda). Actualmente su desarrollo
-y mantenimiento está a cargo del <em>R Core Team</em>. El sitio oficial
-del proyecto es <a href="www.r-project.org">www.r-project.org</a></p>
-<p>Hoy en día, <strong>R</strong> es la <em>lingua franca</em> del
-procesamiento y análisis de datos, tanto en el ámbito académico como
-comercial dado que es gratiuto, multiplataforma, de código abierto
-(<em>open source</em>, liberado con licencia GNU/GPL). Esto y el
-ecosistema de paquetes contribuidos por la comunidad de usuarios lo
-convierte en un software muy potente ya que expresa el estado del arte
-de los métodos estadísticos.</p>
-<p>La flexibilidad y potencia de <strong>R</strong> se basa en su
-interfaz de comandos (CLI, del inglés <em>command line interface</em> )
-que permite la ejecución de comandos de manera interactiva (en consola)
-o estructurada mediante scripts.</p>
-<p>Esta característica impone una <a
-href="https://es.wikipedia.org/wiki/Curva_de_aprendizaje">curva de
-aprendizaje</a> lenta. Con el objetivo de acelerar el aprendizaje se ha
-diseñado este sitio web con orientado a estudiantes de Estadísica 1 y 2
-de la carrera de Ingenieria Agronómica de la Facultad de Ciencias
-Agrarias (Universidad Nacional del Litoral).</p>
-<h1 id="contenidos">Contenidos</h1>
-<h3 id="cómo-instalar-r-y-rstudio"><a
-href="https://estadistica-fca.github.io/tutoriales_R/como_instalar_R_Rstudio.html">¿Cómo
-instalar R y RStudio?</a></h3>
-<h3 id="cómo-se-usa-rstudio"><a
-href="https://estadistica-fca.github.io/tutoriales_R/primera_sesion.html">¿Cómo
-se usa RStudio?</a></h3>
-<h3 id="cómo-es-el-lenguaje-r"><a
-href="https://estadistica-fca.github.io/tutoriales_R/R_basico.html">¿Cómo
-es el lenguaje R?</a></h3>
-<h3 id="cómo-crear-un-proyecto-en-rstudio"><a
-href="https://estadistica-fca.github.io/tutoriales_R/como_crear_proyecto_rstudio.html">¿Cómo
-crear un proyecto en RStudio?</a></h3>
-<h3 id="cómo-instalar-y-cargar-paquetes-en-r"><a
-href="https://estadistica-fca.github.io/tutoriales_R/como_instalar_y_cargar_paquetes.html">¿Cómo
-instalar y cargar paquetes en R?</a></h3>
-<h3 id="cómo-importar-datos-en-r"><a
-href="https://estadistica-fca.github.io/tutoriales_R/como_importar_datos_en_R.html">¿Cómo
-importar datos en R?</a></h3>
-<h3 id="cómo-manipular-datos-con-dplyr"><a
-href="https://estadistica-fca.github.io/tutoriales_R/introduccion_a_dplyr.html">¿Cómo
-manipular datos con <code>dplyr</code>?</a></h3>
-<h3 id="cómo-visualizar-datos-con-ggplot2"><a
-href="https://estadistica-fca.github.io/tutoriales_R/introduccion_a_ggplot2.html">¿Cómo
-visualizar datos con <code>ggplot2</code>?</a></h3>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+<a property="dct:title" rel="cc:attributionURL" href="https://estadistica-fca.github.io/tutoriales_R/">Tutoriales de R</a> by <span property="cc:attributionName">ALESSO, CARLOS AGUSTIN &amp; ACETTA PATRICIA </span> is licensed under <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-ND 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1"></a>
+</p>
+<p><strong>R</strong> es un lenguaje y entorno para el procesamiento, visualización y análisis estadístico de datos. Fue creado en 1993 por R. Gentleman y R. Ihaka, ambos científicos del Departamento de Estadística de la Universidad de Auckland (Nueva Zelanda). Actualmente su desarrollo y mantenimiento está a cargo del <em>R Core Team</em>. El sitio oficial del proyecto es <a href="www.r-project.org">www.r-project.org</a></p>
+<p>Hoy en día, <strong>R</strong> es la <em>lingua franca</em> del procesamiento y análisis de datos, tanto en el ámbito académico como comercial dado que es gratiuto, multiplataforma, de código abierto (<em>open source</em>, liberado con licencia GNU/GPL). Esto y el ecosistema de paquetes contribuidos por la comunidad de usuarios lo convierte en un software muy potente ya que expresa el estado del arte de los métodos estadísticos.</p>
+<p>La flexibilidad y potencia de <strong>R</strong> se basa en su interfaz de comandos (CLI, del inglés <em>command line interface</em> ) que permite la ejecución de comandos de manera interactiva (en consola) o estructurada mediante scripts.</p>
+<p>Esta característica impone una <a href="https://es.wikipedia.org/wiki/Curva_de_aprendizaje">curva de aprendizaje</a> lenta. Con el objetivo de acelerar el aprendizaje se ha diseñado este sitio web con orientado a estudiantes de Estadísica 1 y 2 de la carrera de Ingenieria Agronómica de la Facultad de Ciencias Agrarias (Universidad Nacional del Litoral).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

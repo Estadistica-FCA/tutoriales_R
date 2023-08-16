@@ -455,8 +455,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
 
   <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
   <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
   <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -785,6 +785,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1857,15 +1858,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -2064,7 +2071,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.23/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2141,115 +2148,91 @@ Contenidos
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#instalación-de-r">Instalación de
-<strong>R</strong></a></li>
-<li><a href="#instalación-de-rstudio">Instalación de
-<strong>RStudio</strong></a></li>
+<li><a href="#instalación-de-r" id="toc-instalación-de-r">Instalación de <strong>R</strong></a></li>
+<li><a href="#instalación-de-rstudio" id="toc-instalación-de-rstudio">Instalación de <strong>RStudio</strong></a></li>
 </ul>
 </nav>
 </div>
-<p><strong>R</strong> y <strong>RStudio</strong> se instalan por
-separado. <strong>R</strong> puede funcionar sin
-<strong>RStudio</strong>, en cambio <strong>RStudio</strong> necesita
-que al menos una versión de <strong>R</strong> esté instalada en el
-sistema. Ambos softwares son multiplataforma y pueden ser ejecutados en
-sistemas operativos Windows, Mac OS X y Linux.</p>
-<p>En las páginas <a
-href="https://cloud.r-project.org/">https://cloud.r-project.org/</a> y
-<a
-href="https://www.rstudio.com/products/rstudio/download/">https://www.rstudio.com/products/rstudio/download/</a>
-hay instrucciones específicas para cada plataforma.</p>
+<p><strong>R</strong> y <strong>RStudio</strong> se instalan por separado. <strong>R</strong> puede funcionar sin <strong>RStudio</strong>, en cambio <strong>RStudio</strong> necesita que al menos una versión de <strong>R</strong> esté instalada en el sistema. Ambos softwares son multiplataforma y pueden ser ejecutados en sistemas operativos Windows, Mac OS X y Linux.</p>
+<p>En la páginas <a href="https://posit.co/download/rstudio-desktop/">https://posit.co/download/rstudio-desktop/</a> hay instrucciones específicas para cada plataforma R y Rstudio.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
-<img src="assets/CRAN_choose_OS.png" alt="Página de descaga de **R**" width="75%"  />
+<img src="assets/posit.png" alt="Página de descaga de **R y RStudio en _posit_**" width="75%"  />
 <p class="caption">
-Figure 1: Página de descaga de <strong>R</strong>
+Figure 1: Página de descaga de <strong>R y RStudio en <em>posit</em></strong>
 </p>
 </div>
 </div>
+<p>A continuación se describe el procedimiento para instalar <strong>R</strong> y <strong>RStudio</strong> bajo Windows.</p>
+<h2 id="instalación-de-r">Instalación de <strong>R</strong></h2>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
-<img src="assets/rstudio_download.png" alt="Página de descarga de **RStudio**" width="75%"  />
+<img src="assets/R.png" alt="Botón para descaga de **R**" width="75%"  />
 <p class="caption">
-Figure 2: Página de descarga de <strong>RStudio</strong>
+Figure 2: Botón para descaga de <strong>R</strong>
 </p>
 </div>
 </div>
-<p>A continuación se describe el procedimiento para instalar
-<strong>R</strong> y <strong>RStudio</strong> bajo Windows.</p>
-<h2 id="instalación-de-r">Instalación de <strong>R</strong></h2>
 <ol type="1">
-<li>Descargar el archivo instalador correspondiente a la última versión
-estable de <strong>R</strong> desde el CRAN<a href="#fn1"
-class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
-(del inglés, <em>Comprenhensive R Archive Network</em>) visitando el
-siguiente <a
-href="https://cloud.r-project.org/bin/windows/base/release.htm">link</a>.</li>
-</ol>
-<ol start="2" type="1">
-<li>Ejecutar el archivo descargado <a href="#fn2" class="footnote-ref"
-id="fnref2" role="doc-noteref"><sup>2</sup></a> y seguir el asistente de
-instalación con todas las opciones por defecto.</li>
-</ol>
-<ol start="3" type="1">
-<li>Si la instalación ha sido exitosa en el menú <em>Inicio</em> podrá
-encontrarse la carpeta <em>R</em> que contendrá dos accesos directos a
-la interfase de usuario mínima que viene con la versión de
-<strong>R</strong> para Windows.</li>
+<li>Descargar el archivo instalador correspondiente a la última versión estable de <strong>R</strong> desde el CRAN<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> (del inglés, <em>Comprenhensive R Archive Network</em>) visitando el siguiente <a href="https://cloud.r-project.org/bin/windows/base/release.htm">link</a>.</li>
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
-<img src="assets/rgui.png" alt="R GUI para Windows" width="75%"  />
+<img src="assets/CRAN_choose_OS.png" alt="Página de descaga de **R**" width="75%"  />
 <p class="caption">
-Figure 3: R GUI para Windows
+Figure 3: Página de descaga de <strong>R</strong>
 </p>
 </div>
 </div>
-<h2 id="instalación-de-rstudio">Instalación de
-<strong>RStudio</strong></h2>
-<ol type="1">
-<li>Descargar el archivo de instalación correspondiente a nuestra
-plataforma o sistema operativo. Ir al sitio web de descarga de
-<strong>RStudio</strong> <a
-href="https://www.rstudio.com/products/rstudio/download/#download">https://www.rstudio.com/products/rstudio/download/#download</a></li>
-</ol>
 <div class="layout-chunk" data-layout="l-body">
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
-<img src="assets/rstudio_download_OS.png" alt="Página de descarga de **RStudio**" width="75%"  />
+<img src="assets/install%20first%20time.PNG" alt="Dirigirse a Install R for firt time" width="75%"  />
 <p class="caption">
-Figure 4: Página de descarga de <strong>RStudio</strong>
+Figure 4: Dirigirse a Install R for firt time
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<img src="assets/download%20R.PNG" alt="Dirigire a &quot;Download R-X.X.X for Windows&quot;" width="75%"  />
+<p class="caption">
+Figure 5: Dirigire a “Download R-X.X.X for Windows”
 </p>
 </div>
 </div>
 <ol start="2" type="1">
-<li><p>Ejecutar el archivo <code>.exe</code> y seguir el asistente de
-instalación con todas las opciones por defecto.</p></li>
-<li><p>Si la instalación ha sido exitosa en el menú <em>Inicio</em>
-dentro de la carpeta <em>RStudio</em> se encontrará el acceso directo a
-<strong>RStudio</strong> el cual, mediante el menu contextual (botón
-derecho del ratón) puede enviarse al Escritorio como acceso directo o
-bien anclar al menu de Inicio o barra de acceso rápido.</p></li>
+<li><p>Ejecutar el archivo descargado y seguir el asistente de instalación con todas las opciones por defecto.</p></li>
+<li><p>Si la instalación ha sido exitosa en el menú <em>Inicio</em> podrá encontrarse la carpeta <em>R</em> que contendrá dos accesos directos a la interfase de usuario mínima que viene con la versión de <strong>R</strong> para Windows (no abriremos este acceso directo).</p></li>
 </ol>
-<p>Ahora sí, ya tenemos listo <strong>R</strong> y
-<strong>RStudio</strong> para empezar a trabajar!!</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
-<section class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
+<h2 id="instalación-de-rstudio">Instalación de <strong>RStudio</strong></h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
+<img src="assets/rstudio.png" alt="Botón para descaga de **RStudio**" width="75%"  />
+<p class="caption">
+Figure 6: Botón para descaga de <strong>RStudio</strong>
+</p>
+</div>
+</div>
+<ol type="1">
+<li><p>Descargar el archivo de instalación correspondiente a nuestra plataforma o sistema operativo.</p></li>
+<li><p>Ejecutar el archivo <code>.exe</code> y seguir el asistente de instalación con todas las opciones por defecto.</p></li>
+<li><p>Si la instalación ha sido exitosa en el menú <em>Inicio</em> dentro de la carpeta <em>RStudio</em> se encontrará el acceso directo a <strong>RStudio</strong> el cual, mediante el menu contextual (botón derecho del ratón) puede enviarse al Escritorio como acceso directo o bien anclar al menu de Inicio o barra de acceso rápido.</p></li>
+</ol>
+<div class="layout-chunk" data-layout="l-body">
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<img src="assets/rstudio_icon.png" alt="Icono de **RStudio**" width="25%"  />
+<p class="caption">
+Figure 7: Icono de <strong>RStudio</strong>
+</p>
+</div>
+</div>
+<p><br></p>
+<p>Ahora sí, ya tenemos listo <strong>R</strong> y <strong>RStudio</strong> para empezar a trabajar!!</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>CRAN es un conjunto de servidores
-espejo distribuidos alrededor del mundo que tienen copias de
-<strong>R</strong> y sus paquetes. No es necesario escojer el espejo más
-cercano ya que el espejo nube (<a href="https://cloud.r-project.org"
-class="uri">https://cloud.r-project.org</a>) automáticamente determina
-de que servidor conviene realizar la descarga.<a href="#fnref1"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>Al momento de escribir estas
-instrucciones la última versión estable de <strong>R</strong> era la
-4.1.1 “Kick Things”, por lo tanto el link apuntará al archivo
-<code>R-4.1.3-win.exe</code>.<a href="#fnref2" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>CRAN es un conjunto de servidores espejo distribuidos alrededor del mundo que tienen copias de <strong>R</strong> y sus paquetes. No es necesario escojer el espejo más cercano ya que el espejo nube (<a href="https://cloud.r-project.org" class="uri">https://cloud.r-project.org</a>) automáticamente determina de que servidor conviene realizar la descarga.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 <!--radix_placeholder_article_footer-->
