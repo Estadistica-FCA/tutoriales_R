@@ -42,6 +42,7 @@ La flexibilidad y potencia de **R** se basa en su interfaz de comandos (CLI, del
 
 Esta característica impone una [curva de aprendizaje](https://es.wikipedia.org/wiki/Curva_de_aprendizaje) lenta. Con el objetivo de acelerar el aprendizaje se ha diseñado este sitio web con orientado a estudiantes de Estadísica 1 y 2 de la carrera de Ingenieria Agronómica de la Facultad de Ciencias Agrarias (Universidad Nacional del Litoral).
 
+
 # Contenidos
 
 ### [¿Cómo instalar R y RStudio?](https://estadistica-fca.github.io/tutoriales_R/como_instalar_R_Rstudio.html)
