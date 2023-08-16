@@ -455,8 +455,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
 
   <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
   <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
   <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
@@ -785,6 +785,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1857,15 +1858,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
-          var fn = $(this).children()[0]
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
           $(this).html(fn.shadowRoot.querySelector("sup"))
           $(this).id = fn.id
           fn.remove()
         }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -2064,7 +2071,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.23/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2141,34 +2148,23 @@ Contenidos
 <nav class="l-text toc figcaption" id="TOC">
 <h3>Contents</h3>
 <ul>
-<li><a href="#agustín-alesso">Agustín Alesso</a></li>
-<li><a href="#patricia-acetta">Patricia Acetta</a></li>
+<li><a href="#agustín-alesso" id="toc-agustín-alesso">Agustín Alesso</a></li>
+<li><a href="#patricia-acetta" id="toc-patricia-acetta">Patricia Acetta</a></li>
 </ul>
 </nav>
 </div>
 <p>Este sitio fue preparado por el equipo de Estadística de la FCA.</p>
 <h2 id="agustín-alesso">Agustín Alesso</h2>
-<p>Ingeniero Agrónomo (UNL) Dr. en Ciencias Agropecuarias (UNC)
-`fontawesome::fa(“email”) <a href="mailto:calesso@fca.unl.edu.ar"
-class="email">calesso@fca.unl.edu.ar</a></p>
-<p>Profesor Adjunto de la UNL. Orienta su investigación en métodos
-estadísticos y geoestadísticos aplicados a agricultura de precisión, y
-trabaja en temas relacionados con el análisis de la variabilidad
-espacial y temporal de rendimientos de cultivos y atributos de suelo y
-delimitación de zonas de manejo.</p>
+<p>Ingeniero Agrónomo (UNL)
+Dr. en Ciencias Agropecuarias (UNC)
+<a href="mailto:calesso@fca.unl.edu.ar" class="email">calesso@fca.unl.edu.ar</a></p>
+<p>Profesor Adjunto de la UNL. Orienta su investigación en métodos estadísticos y geoestadísticos aplicados a agricultura de precisión, y trabaja en temas relacionados con el análisis de la variabilidad espacial y temporal de rendimientos de cultivos y atributos de suelo y delimitación de zonas de manejo.</p>
 <h2 id="patricia-acetta">Patricia Acetta</h2>
-<p>Ingeniera Agrónoma (UNL) Mg. en Negocios Agroalimentarios (UNL)
-`fontawesome::fa(“email”) <a href="mailto:pacetta@fca.unl.edu.ar"
-class="email">pacetta@fca.unl.edu.ar</a></p>
-<p>Ayudante de cátedra en grado, pregrado y posgrado de la UNL. Orienta
-su investigación en economía de la producción agropecuaria, análisis de
-datos de gestión económica y financiera y cambios tecnológicos de
-empresas agropecuarias, así como su impacto en la toma de decisiones en
-los agronegocios; formulación y evaluación de proyectos de desarrollo
-rural. Diplomada en AgroAnalytics (Univ. Austral). Especializada en
-Bioeconomía como nuevo pradigma de desarrollo productivo (IICA)</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>Ingeniera Agrónoma (UNL)
+Mg. en Negocios Agroalimentarios (UNL)
+<a href="mailto:pacetta@fca.unl.edu.ar" class="email">pacetta@fca.unl.edu.ar</a></p>
+<p>Ayudante de cátedra en grado, pregrado y posgrado de la UNL. Orienta su investigación en economía de la producción agropecuaria, análisis de datos de gestión económica y financiera y cambios tecnológicos de empresas agropecuarias, así como su impacto en la toma de decisiones en los agronegocios; formulación y evaluación de proyectos de desarrollo rural. Diplomada en AgroAnalytics (Univ. Austral).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
