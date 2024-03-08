@@ -35,12 +35,12 @@ include_graphics('assets/CRAN_choose_OS.png', auto_pdf = T)
 
 ```{r, echo = F, fig.cap = 'Dirigirse a Install R for firt time', out.width = '75%', out.extra=''} 
 #webshot::webshot('https://cloud.r-project.org/', file = 'assets/CRAN_choose_OS.png')
-include_graphics('assets/install first time.png', auto_pdf = T)
+include_graphics('assets/install first time.PNG', auto_pdf = T)
 ```
 
 ```{r, echo = F, fig.cap = 'Dirigire a "Download R-X.X.X for Windows"', out.width = '75%', out.extra=''} 
 #webshot::webshot('https://cloud.r-project.org/', file = 'assets/CRAN_choose_OS.png')
-include_graphics('assets/download R.png', auto_pdf = T)
+include_graphics('assets/download R.PNG', auto_pdf = T)
 ```
 
 [^1]: CRAN es un conjunto de servidores espejo distribuidos alrededor del mundo que tienen copias de **R** y sus paquetes. No es necesario escojer el espejo más cercano ya que el espejo nube (https://cloud.r-project.org) automáticamente determina de que servidor conviene realizar la descarga.
@@ -54,7 +54,7 @@ include_graphics('assets/download R.png', auto_pdf = T)
 
 ```{r, echo = F, fig.cap = 'Botón para descaga de **RStudio**', out.width = '75%', out.extra=''} 
 #webshot::webshot('https://cloud.r-project.org/', file = 'assets/CRAN_choose_OS.png')
-include_graphics('assets/rstudio.png', auto_pdf = T)
+include_graphics('assets/rstudio.PNG', auto_pdf = T)
 ```
 
 1) Descargar el archivo de instalación correspondiente a nuestra plataforma o sistema operativo. 
