@@ -40,7 +40,7 @@
       "title": "Tutoriales de R",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n\r\nTutoriales de R by ALESSO, CARLOS AGUSTIN & ACETTA PATRICIA  is licensed under CC BY-NC-ND 4.0\r\n\r\nR es un lenguaje y entorno para el procesamiento, visualización y análisis estadístico de datos. Fue creado en 1993 por R. Gentleman y R. Ihaka, ambos científicos del Departamento de Estadística de la Universidad de Auckland (Nueva Zelanda). Actualmente su desarrollo y mantenimiento está a cargo del R Core Team. El sitio oficial del proyecto es www.r-project.org\r\nHoy en día, R es la lingua franca del procesamiento y análisis de datos, tanto en el ámbito académico como comercial dado que es gratiuto, multiplataforma, de código abierto (open source, liberado con licencia GNU/GPL). Esto y el ecosistema de paquetes contribuidos por la comunidad de usuarios lo convierte en un software muy potente ya que expresa el estado del arte de los métodos estadísticos.\r\nLa flexibilidad y potencia de R se basa en su interfaz de comandos (CLI, del inglés command line interface ) que permite la ejecución de comandos de manera interactiva (en consola) o estructurada mediante scripts.\r\nEsta característica impone una curva de aprendizaje lenta. Con el objetivo de acelerar el aprendizaje se ha diseñado este sitio web con orientado a estudiantes de Estadísica 1 y 2 de la carrera de Ingenieria Agronómica de la Facultad de Ciencias Agrarias (Universidad Nacional del Litoral).\r\n\r\n\r\n\r\n",
-      "last_modified": "2023-08-15T22:17:43-03:00"
+      "last_modified": "2024-03-08T16:45:52-03:00"
     },
     {
       "path": "introduccion_a_dplyr.html",
